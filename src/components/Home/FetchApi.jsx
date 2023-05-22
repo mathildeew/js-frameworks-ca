@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { BaseButton } from "../Basebutton.styles";
 import { ProductsGrid } from "./ProductsGrid.styles";
 
-export function FetchApi() {
-  const url = "https://api.noroff.dev/api/v1/online-shop";
+export function fetchApi(url) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -12,8 +11,8 @@ export function FetchApi() {
   useEffect(() => {
     async function getData() {
       try {
-        setIsError(false);
         setIsLoading(true);
+        setIsError(false);
 
         const response = await fetch(url);
         const json = await response.json();
@@ -27,28 +26,7 @@ export function FetchApi() {
       }
     }
     getData();
-  }, []);
+  }, [url]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-  if (isError) {
-    return <div>There's an error with the site</div>;
-  }
-
-  return (
-    <main>
-      <ProductsGrid>
-        {products.map((product) => (
-          <div>
-            <img src={product.imageUrl} />
-            <h2>{product.title}</h2>
-            <BaseButton>
-              <Link to={`/product/${product.id}`}>Check out</Link>
-            </BaseButton>
-          </div>
-        ))}
-      </ProductsGrid>
-    </main>
-  );
+  return { products };
 }

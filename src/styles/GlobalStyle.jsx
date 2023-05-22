@@ -2,6 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
+* {
+    margin: 0;
+}
+
 html {
     --color-primary: #F7F5F8;
     --color-secondary: black;
@@ -23,9 +27,12 @@ main {
 }
 
 h2 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
+
+
 
 a {
     text-decoration: none;
