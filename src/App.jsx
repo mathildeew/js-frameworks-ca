@@ -1,9 +1,6 @@
 import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/index";
-
-function Footer() {
-  return <footer>THis is footer</footer>;
-}
+import Footer from "./components/Footer";
 
 function Home() {
   return <h1>Home</h1>;

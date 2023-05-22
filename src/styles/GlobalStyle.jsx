@@ -14,7 +14,13 @@ body {
     width: 100%;
     margin: 0 auto;
     background: var(--color-primary);
+
+
+
+a {
+    text-decoration: none;
 }
+
 
 
 `;
