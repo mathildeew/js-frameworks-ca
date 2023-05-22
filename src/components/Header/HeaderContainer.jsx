@@ -5,7 +5,4 @@ export const HeaderContainer = styled.header`
   background-color: var(--color-secondary);
   border: 2px solid red;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 `;

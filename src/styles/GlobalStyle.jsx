@@ -15,13 +15,13 @@ body {
     margin: 0 auto;
     background: var(--color-primary);
 
-
-
 a {
     text-decoration: none;
 }
 
-
+li {
+    list-style: none;
+}
 
 `;
 
