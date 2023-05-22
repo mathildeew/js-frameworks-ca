@@ -8,4 +8,8 @@ export const BaseButton = styled.button`
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 20px;
+
+  a {
+    color: var(--color-primary);
+  }
 `;

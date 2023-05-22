@@ -14,12 +14,17 @@ body {
     width: 100%;
     margin: 0 auto;
     background: var(--color-primary);
-    font-family: Open Sans, sans-serif;
+    font-family: Open Sans Variable, sans-serif;
 }
 
 main {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 a {
