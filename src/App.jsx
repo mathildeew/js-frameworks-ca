@@ -4,7 +4,11 @@ import Footer from "./components/Footer";
 import { Contact } from "./components/Contact";
 
 function Home() {
-  return <h1>Home</h1>;
+  return (
+    <main>
+      <h1>Home</h1>
+    </main>
+  );
 }
 
 function Product() {

@@ -5,7 +5,7 @@ export const BaseButton = styled.button`
   color: var(--color-primary);
   background-color: var(--color-secondary);
   border-style: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-bottom: 20px;
 `;

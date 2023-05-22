@@ -6,8 +6,13 @@ export const FormContainer = styled.form`
 
   input,
   textarea {
+    background-color: var(--color-primary);
     border: 1.5px solid var(--color-secondary);
     outline: none;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  input {
+    height: 30px;
   }
 `;

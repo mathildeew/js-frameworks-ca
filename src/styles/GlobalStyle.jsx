@@ -17,6 +17,11 @@ body {
     font-family: Open Sans, sans-serif;
 }
 
+main {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 a {
     text-decoration: none;
 }
