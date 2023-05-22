@@ -1,16 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { Logo } from "./Logo";
+import { Nav } from "./Nav";
+import { HeaderContainer } from "./HeaderContainer";
 
 export default function Header() {
   return (
-    <header>
-      <nav>
-        <Link to="/">Brand</Link>
-        <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
-        <FontAwesomeIcon icon={Icons.faBagShopping} />
-        <FontAwesomeIcon icon={Icons.faBars} />
-      </nav>
-    </header>
+    <HeaderContainer>
+      <Logo href="/">Brand</Logo>
+      <Nav>
+        <FontAwesomeIcon icon={Icons.faMagnifyingGlass} size="lg" />
+        <FontAwesomeIcon icon={Icons.faBagShopping} size="lg" />
+        <FontAwesomeIcon icon={Icons.faBars} size="lg" />
+      </Nav>
+    </HeaderContainer>
   );
 }

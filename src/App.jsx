@@ -1,5 +1,4 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
-
+import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/index";
 
 function Footer() {
@@ -7,11 +6,7 @@ function Footer() {
 }
 
 function Home() {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  );
+  return <h1>Home</h1>;
 }
 
 function Product() {
@@ -66,17 +61,15 @@ function Layout() {
 
 export default function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />}></Route>
-          <Route path="product" element={<Product />}></Route>
-          <Route path="cart" element={<Cart />}></Route>
-          <Route path="checkoutsuccess" element={<CheckoutSuccess />}></Route>
-          <Route path="contactus" element={<Contact />}></Route>
-          <Route path="*" element={<RouteNotFound />}></Route>
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />}></Route>
+        <Route path="product" element={<Product />}></Route>
+        <Route path="cart" element={<Cart />}></Route>
+        <Route path="checkoutsuccess" element={<CheckoutSuccess />}></Route>
+        <Route path="contactus" element={<Contact />}></Route>
+        <Route path="*" element={<RouteNotFound />}></Route>
+      </Route>
+    </Routes>
   );
 }
