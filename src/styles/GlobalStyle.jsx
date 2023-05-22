@@ -14,6 +14,8 @@ body {
     width: 100%;
     margin: 0 auto;
     background: var(--color-primary);
+    font-family: Open Sans, sans-serif;
+}
 
 a {
     text-decoration: none;

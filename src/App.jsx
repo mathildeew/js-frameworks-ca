@@ -1,6 +1,7 @@
 import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer";
+import { Contact } from "./components/Contact";
 
 function Home() {
   return <h1>Home</h1>;
@@ -26,14 +27,6 @@ function CheckoutSuccess() {
   return (
     <div>
       <h1>Checkout</h1>
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div>
-      <h1>Contact</h1>
     </div>
   );
 }
