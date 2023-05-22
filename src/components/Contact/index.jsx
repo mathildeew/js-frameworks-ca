@@ -15,17 +15,20 @@ export function Contact() {
     console.log(body);
   }
 
-  function onNameChange(event) {
-    setName(event.target.value);
-  }
-  function onEmailChange(event) {
-    setEmail(event.target.value);
-  }
-  function onSubjectChange(event) {
-    setName(event.target.value);
-  }
-  function onMessageChange(event) {
-    setMessage(event.target.value);
+  function onTextInputChange(event) {
+    const value = event.target.value;
+    if (event.target.name === "name") {
+      setName(value);
+    }
+    if (event.target.name === "email") {
+      setEmail(value);
+    }
+    if (event.target.name === "subject") {
+      setSubject(value);
+    }
+    if (event.target.name === "message") {
+      setMessage(value);
+    }
   }
 
   return (
@@ -33,20 +36,35 @@ export function Contact() {
       <h1>Contact us</h1>
       <FormContainer onSubmit={onFormSubmit}>
         <label htmlFor="name">Your name</label>
-        <input name="name" minLength={3} onChange={onNameChange} required />
+        <input
+          name="name"
+          minLength={3}
+          onChange={onTextInputChange}
+          required
+        />
 
         <label htmlFor="email">Your email</label>
-        <input name="email" type="email" onChange={onNameChange} required />
+        <input
+          name="email"
+          type="email"
+          onChange={onTextInputChange}
+          required
+        />
 
         <label htmlFor="subject">Subject</label>
-        <input name="subject" minLength={3} onChange={onNameChange} required />
+        <input
+          name="subject"
+          minLength={3}
+          onChange={onTextInputChange}
+          required
+        />
 
         <label htmlFor="message">Your message</label>
         <textarea
           name="message"
           minLength={3}
           rows="7"
-          onChange={onNameChange}
+          onChange={onTextInputChange}
           required
         ></textarea>
 
