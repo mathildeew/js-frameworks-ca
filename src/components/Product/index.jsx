@@ -1,5 +1,9 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { BaseButton } from "../Basebutton.styles";
+import { ProductContainer } from "./Product.styles";
+import * as Icons from "@fortawesome/free-solid-svg-icons";
 
 export function Product() {
   const [product, setProduct] = useState([]);
@@ -36,10 +40,28 @@ export function Product() {
   }
 
   return (
-    <section className="productContainer">
-      <h1>{product.title}</h1>
-      <img src={product.imageUrl} />
-      <p>{product.description}</p>
-    </section>
+    <main>
+      <ProductContainer className="productContainer">
+        <img src={product.imageUrl} />
+        <h1>{product.title}</h1>
+        <Ratings />
+        <p>{product.description}</p>
+        <BaseButton>Add to cart</BaseButton>
+      </ProductContainer>
+    </main>
   );
+
+  function Ratings() {
+    if (product.rating >= 4 && product.rating < 5) {
+      return (
+        <div className="rating">
+          <FontAwesomeIcon icon={Icons.faStar} />
+          <FontAwesomeIcon icon={Icons.faStar} />
+          <FontAwesomeIcon icon={Icons.faStar} />
+          <FontAwesomeIcon icon={Icons.faStar} />
+          <FontAwesomeIcon icon={Icons.faStarHalfAlt} />
+        </div>
+      );
+    }
+  }
 }
