@@ -3,14 +3,7 @@ import Header from "./components/Header/index";
 import Footer from "./components/Footer";
 import { Contact } from "./components/Contact";
 import { Home } from "./components/Home/index";
-
-function Product() {
-  return (
-    <div>
-      <h1>Product</h1>
-    </div>
-  );
-}
+import { Product } from "./components/Product/index";
 
 function Cart() {
   return (
@@ -51,7 +44,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />}></Route>
-        <Route path="product" element={<Product />}></Route>
+        <Route path="product/:id" element={<Product />}></Route>
         <Route path="cart" element={<Cart />}></Route>
         <Route path="checkoutsuccess" element={<CheckoutSuccess />}></Route>
         <Route path="contactus" element={<Contact />}></Route>
