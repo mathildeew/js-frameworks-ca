@@ -1,16 +1,6 @@
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
-function Nav() {
-  return <nav></nav>;
-}
-
-function Header() {
-  return (
-    <header>
-      <Nav />
-    </header>
-  );
-}
+import Header from "./components/Header/index";
 
 function Footer() {
   return <footer>THis is footer</footer>;
