@@ -2,14 +2,7 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer";
 import { Contact } from "./components/Contact";
-
-function Home() {
-  return (
-    <main>
-      <h1>Home</h1>
-    </main>
-  );
-}
+import { Home } from "./components/Home/index";
 
 function Product() {
   return (
