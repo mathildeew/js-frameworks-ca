@@ -24,5 +24,5 @@ export function fetchApi(url) {
     getData();
   }, [url]);
 
-  return { products };
+  return { products, isLoading, isError };
 }

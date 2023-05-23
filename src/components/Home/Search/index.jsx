@@ -7,7 +7,9 @@ import HomeGrid from "../ProductsGrid";
 import { SearchInput } from "./Search.styles";
 
 export default function Search() {
-  const { products } = fetchApi("https://api.noroff.dev/api/v1/online-shop");
+  const { products, isLoading, isError } = fetchApi(
+    "https://api.noroff.dev/api/v1/online-shop"
+  );
 
   const [searchedProduct, setSearchedProduct] = useState("");
   const onSearch = (event) => {
@@ -17,6 +19,9 @@ export default function Search() {
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchedProduct.toLowerCase())
   );
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Something went wrong</div>;
 
   return (
     <div>
