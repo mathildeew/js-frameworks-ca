@@ -20,7 +20,6 @@ export default function Header() {
       <HeaderContent>
         <Logo href="/">Brand</Logo>
         <IconsHeader>
-          <FontAwesomeIcon icon={Icons.faMagnifyingGlass} size="lg" />
           <FontAwesomeIcon icon={Icons.faBagShopping} size="lg" />
           <FontAwesomeIcon icon={Icons.faBars} size="lg" onClick={onShowMenu} />
         </IconsHeader>
