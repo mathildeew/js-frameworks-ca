@@ -5,7 +5,7 @@ export function Home() {
   return (
     <main>
       <Search />
-      <HomeGrid />
+      {/* <HomeGrid /> */}
     </main>
   );
 }
