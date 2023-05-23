@@ -14,7 +14,7 @@ export default function HomeGrid() {
   return (
     <ProductsGrid>
       {products.map((product) => (
-        <div>
+        <div key={product.id}>
           <img src={product.imageUrl} />
           <h2>{product.title}</h2>
           <ProductsGridPrice>
