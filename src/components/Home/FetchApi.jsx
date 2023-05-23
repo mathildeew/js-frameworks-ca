@@ -16,7 +16,6 @@ export function fetchApi(url) {
 
         setIsLoading(false);
         setProducts(json);
-        console.log(json);
       } catch (error) {
         setIsLoading(false);
         setIsError(true);

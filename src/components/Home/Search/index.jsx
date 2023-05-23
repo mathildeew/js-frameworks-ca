@@ -10,7 +10,6 @@ export default function Search() {
   const { products } = fetchApi("https://api.noroff.dev/api/v1/online-shop");
 
   const [searchedProduct, setSearchedProduct] = useState("");
-
   const onSearch = (event) => {
     setSearchedProduct(event.target.value);
   };

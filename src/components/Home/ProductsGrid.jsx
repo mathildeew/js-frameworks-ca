@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { BaseButton } from "../Basebutton.styles";
-import { fetchApi } from "./FetchApi";
 import {
   ProductsGrid,
   ProductsGridDiscount,
