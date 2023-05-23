@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import styled from "styled-components";
 import { BaseButton } from "../Basebutton.styles";
 import { ProductContainer } from "./Product.styles";
-import * as Icons from "@fortawesome/free-solid-svg-icons";
+import { ratings } from "./rating";
 
 export function Product() {
   const [product, setProduct] = useState([]);
@@ -44,24 +44,23 @@ export function Product() {
       <ProductContainer className="productContainer">
         <img src={product.imageUrl} />
         <h1>{product.title}</h1>
-        <Ratings />
+        <RatingContainer>{ratings(product.rating)}</RatingContainer>
         <p>{product.description}</p>
         <BaseButton>Add to cart</BaseButton>
+        <ReviewsContainer></ReviewsContainer>
       </ProductContainer>
     </main>
   );
-
-  function Ratings() {
-    if (product.rating >= 4 && product.rating < 5) {
-      return (
-        <div className="rating">
-          <FontAwesomeIcon icon={Icons.faStar} />
-          <FontAwesomeIcon icon={Icons.faStar} />
-          <FontAwesomeIcon icon={Icons.faStar} />
-          <FontAwesomeIcon icon={Icons.faStar} />
-          <FontAwesomeIcon icon={Icons.faStarHalfAlt} />
-        </div>
-      );
-    }
-  }
 }
+
+const RatingContainer = styled.div`
+  display: flex;
+
+  p {
+    margin-left: 25px;
+  }
+`;
+
+const ReviewsContainer = styled.div`
+  border: 2px solid var(--color-secondary);
+`;
