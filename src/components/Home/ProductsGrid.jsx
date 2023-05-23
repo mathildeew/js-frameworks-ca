@@ -19,18 +19,20 @@ export default function HomeGrid() {
           <h2>{product.title}</h2>
           <ProductsGridPrice>
             {product.discountedPrice === product.price && (
-              <p>${product.price}</p>
+              <span>${product.price}</span>
             )}
           </ProductsGridPrice>
           <ProductsGridDiscount>
             {product.discountedPrice < product.price && (
-              <p>${product.discountedPrice}</p>
+              <span>${product.discountedPrice}</span>
             )}
           </ProductsGridDiscount>
           <ProductsGridOldPrice>
-            {product.discountedPrice < product.price && <p>${product.price}</p>}
+            {product.discountedPrice < product.price && (
+              <span>${product.price}</span>
+            )}
           </ProductsGridOldPrice>
-          <BaseButton>
+          <BaseButton isWhite={true}>
             <Link to={`/product/${product.id}`}>Check out</Link>
           </BaseButton>
         </div>

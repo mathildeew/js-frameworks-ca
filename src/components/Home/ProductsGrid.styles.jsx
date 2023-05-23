@@ -7,7 +7,9 @@ export const ProductsGrid = styled.section`
   gap: 20px;
 
   div {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   img {

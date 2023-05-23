@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { BaseButton } from "../Basebutton.styles";
-import { ProductsGrid } from "./ProductsGrid.styles";
 
 export function fetchApi(url) {
   const [products, setProducts] = useState([]);
