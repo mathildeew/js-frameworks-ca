@@ -46,12 +46,51 @@ export function Product() {
         <h1>{product.title}</h1>
         <RatingContainer>{ratings(product.rating)}</RatingContainer>
         <p>{product.description}</p>
+        <ProductPrizing>
+          <p>
+            {product.discountedPrice === product.price && (
+              <span>${product.price}</span>
+            )}
+          </p>
+          <p>
+            {product.discountedPrice < product.price && (
+              <span className="newPrice">${product.discountedPrice}</span>
+            )}
+          </p>
+          <div>
+            <p>
+              {product.discountedPrice < product.price && (
+                <span className="oldPrice">${product.price}</span>
+              )}
+            </p>
+            <p className="priceDiscount">
+              {product.discountedPrice < product.price && (
+                <span>$ {product.price - product.discountedPrice} off</span>
+              )}
+            </p>
+          </div>
+        </ProductPrizing>
         <BaseButton>Add to cart</BaseButton>
         <ReviewsContainer></ReviewsContainer>
       </ProductContainer>
     </main>
   );
 }
+
+const ProductPrizing = styled.div`
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .oldPrice {
+    text-decoration: line-through;
+  }
+
+  .newPrice {
+    color: var(--color-discount);
+  }
+`;
 
 const RatingContainer = styled.div`
   display: flex;
