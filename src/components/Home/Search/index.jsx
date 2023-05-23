@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { fetchApi } from "../FetchApi";
 import HomeGrid from "../ProductsGrid";
+
 import { SearchInput } from "./Search.styles";
 
 export default function Search() {
@@ -14,11 +15,9 @@ export default function Search() {
     setSearchedProduct(event.target.value);
   };
 
-  const results = products.filter((product) =>
+  const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchedProduct.toLowerCase())
   );
-
-  console.log(results);
 
   return (
     <div>
@@ -26,16 +25,8 @@ export default function Search() {
         <input placeholder="Search product" type="search" onChange={onSearch} />
         <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
       </SearchInput>
-      {!searchedProduct && <HomeGrid />}{" "}
-      {searchedProduct && (
-        <div>
-          {results.map((product) => (
-            <div>
-              <p>{product.title}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      {!searchedProduct && <HomeGrid results={products} />}
+      {searchedProduct && <HomeGrid results={filteredProducts} />}
     </div>
   );
 }

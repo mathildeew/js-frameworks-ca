@@ -8,8 +8,8 @@ import {
   ProductsGridPrice,
 } from "./ProductsGrid.styles";
 
-export default function HomeGrid() {
-  const { products } = fetchApi("https://api.noroff.dev/api/v1/online-shop");
+export default function HomeGrid(results) {
+  const { results: products } = results;
 
   return (
     <ProductsGrid>
