@@ -21,8 +21,11 @@ export default function Header() {
       <HeaderContent>
         <Logo href="/">Brand</Logo>
         <IconsHeader>
-          <FontAwesomeIcon icon={Icons.faBagShopping} size="lg" />
-          <FontAwesomeIcon icon={Icons.faBars} size="lg" onClick={onShowMenu} />
+          <span className="fa-layers fa-fw fa-lg">
+            <FontAwesomeIcon icon={Icons.faBagShopping} />
+            <span className="fa-layers-counter">10</span>
+          </span>
+          <FontAwesomeIcon icon={Icons.faBars} onClick={onShowMenu} />
         </IconsHeader>
       </HeaderContent>
       {showMenu ? <Nav /> : true}

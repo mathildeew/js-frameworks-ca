@@ -28,4 +28,14 @@ export const IconsHeader = styled.div`
   width: 20%;
   display: flex;
   justify-content: space-between;
+
+  svg {
+    height: 25px;
+  }
+
+  .fa-layers-counter {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-right: -10px;
+  }
 `;
