@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const NavContainer = styled.nav`
   background: var(--color-secondary);
   font-family: Open Sans, sans-serif;
-  border: 2px solid green;
   display: flex;
   justify-content: flex-end;
   height: 50vh;
