@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { BaseButton } from "../Basebutton.styles";
 import { fetchApi } from "../Home/FetchApi";
 import { ProductContainer } from "./Product.styles";
-import { ratings } from "./rating";
+import { ratings } from "../ui/Rating/rating";
 import { Reviews } from "./Reviews";
+import { RatingContainer } from "../ui/Rating/Rating.styles";
 
 export function Product() {
   // const [product, setProduct] = useState([]);
@@ -75,13 +76,5 @@ const ProductPrizing = styled.div`
 
   .newPrice {
     color: var(--color-discount);
-  }
-`;
-
-export const RatingContainer = styled.div`
-  display: flex;
-
-  p {
-    margin-left: 25px;
   }
 `;

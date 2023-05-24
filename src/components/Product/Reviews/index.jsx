@@ -1,5 +1,5 @@
-import { RatingContainer } from "..";
-import { ratings } from "../rating";
+import { ratings } from "../../ui/Rating/rating";
+import { RatingContainer } from "../../ui/Rating/Rating.styles";
 import { ReviewContainer } from "./Reviews.styles";
 
 export function Reviews(results) {
