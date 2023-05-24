@@ -10,7 +10,6 @@ export function Reviews(results) {
       {reviews?.map((review) => (
         <ReviewContainer key={review.id}>
           <RatingContainer>{ratings(review.rating)}</RatingContainer>
-
           <h2>{review.username}</h2>
           <p>{review.description}</p>
         </ReviewContainer>

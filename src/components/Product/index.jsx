@@ -25,6 +25,7 @@ export function Product() {
   const { products, isLoading, isError } = fetchApi(
     `https://api.noroff.dev/api/v1/online-shop/${id}`
   );
+
   const {
     description,
     discountedPrice,
