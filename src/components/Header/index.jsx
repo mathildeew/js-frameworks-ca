@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import { Logo } from "./Logo";
-import { IconsHeader } from "./IconsHeader";
-import { HeaderContainer } from "./HeaderContainer";
+import {
+  HeaderContainer,
+  HeaderContent,
+  IconsHeader,
+  Logo,
+} from "./Header.styles";
 import { useState } from "react";
-import { HeaderContent } from "./HeaderContent";
 import { Nav } from "./Nav";
 
 export default function Header() {
