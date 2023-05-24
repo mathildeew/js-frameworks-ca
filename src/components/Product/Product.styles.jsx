@@ -8,4 +8,8 @@ export const ProductContainer = styled.section`
     height: 350px;
     object-fit: cover;
   }
+
+  p {
+    margin-bottom: 10px;
+  }
 `;

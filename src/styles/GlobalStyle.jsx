@@ -27,6 +27,11 @@ main {
     margin-right: 10px;
 }
 
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 h2 {
     font-size: 14px;
     font-weight: 600;

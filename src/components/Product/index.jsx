@@ -7,6 +7,15 @@ import { ProductContainer } from "./Product.styles";
 import { ratings } from "../ui/Rating/rating";
 import { Reviews } from "./Reviews";
 import { RatingContainer } from "../ui/Rating/Rating.styles";
+import {
+  ProductsDiscount,
+  ProductsOldPrice,
+  ProductsPrize,
+  ProductsPriceOff,
+  DiscountContainer,
+  ProductPrizing,
+} from "../ui/Prizing/index";
+import { ProductsGrid } from "../Home/ProductsGrid.styles";
 
 export function Product() {
   // const [product, setProduct] = useState([]);
@@ -38,24 +47,20 @@ export function Product() {
         <RatingContainer>{ratings(rating)}</RatingContainer>
         <p>{description}</p>
         <ProductPrizing>
-          <p>{discountedPrice === price && <span>${price}</span>}</p>
-          <p>
+          {discountedPrice === price && <span>${price}</span>}
+          <DiscountContainer>
             {discountedPrice < price && (
-              <span className="newPrice">${discountedPrice}</span>
+              <ProductsDiscount>${discountedPrice}</ProductsDiscount>
             )}
-          </p>
-          <div>
-            <p>
-              {discountedPrice < price && (
-                <span className="oldPrice">${price}</span>
-              )}
-            </p>
-            <p className="priceDiscount">
-              {discountedPrice < price && (
-                <span>$ {price - discountedPrice} off</span>
-              )}
-            </p>
-          </div>
+            {discountedPrice < price && (
+              <ProductsPriceOff>
+                ${price - discountedPrice} off!
+              </ProductsPriceOff>
+            )}
+          </DiscountContainer>
+          {discountedPrice < price && (
+            <ProductsOldPrice>${price}</ProductsOldPrice>
+          )}
         </ProductPrizing>
         <BaseButton>Add to cart</BaseButton>
         <Reviews results={reviews}></Reviews>
@@ -63,18 +68,3 @@ export function Product() {
     </main>
   );
 }
-
-const ProductPrizing = styled.div`
-  div {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .oldPrice {
-    text-decoration: line-through;
-  }
-
-  .newPrice {
-    color: var(--color-discount);
-  }
-`;

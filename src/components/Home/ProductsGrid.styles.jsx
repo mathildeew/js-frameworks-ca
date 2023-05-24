@@ -19,22 +19,3 @@ export const ProductsGrid = styled.section`
     margin-bottom: 10px;
   }
 `;
-
-export const ProductsGridPrice = styled.p`
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-`;
-
-export const ProductsGridDiscount = styled.p`
-  color: var(--color-discount);
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 5px;
-`;
-
-export const ProductsGridOldPrice = styled.p`
-  font-size: 14px;
-  text-decoration: line-through;
-  margin-bottom: 10px;
-`;
