@@ -2,76 +2,62 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { BaseButton } from "../Basebutton.styles";
+import { fetchApi } from "../Home/FetchApi";
 import { ProductContainer } from "./Product.styles";
 import { ratings } from "./rating";
+import { Reviews } from "./Reviews";
 
 export function Product() {
-  const [product, setProduct] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  // const [product, setProduct] = useState([]);
   let { id } = useParams();
   const url = `https://api.noroff.dev/api/v1/online-shop/${id}`;
 
-  useEffect(() => {
-    async function getData() {
-      try {
-        setIsError(false);
-        setIsLoading(true);
+  const { products, isLoading, isError } = fetchApi(
+    `https://api.noroff.dev/api/v1/online-shop/${id}`
+  );
+  const {
+    description,
+    discountedPrice,
+    imageUrl,
+    price,
+    rating,
+    reviews,
+    tags,
+    title,
+  } = products;
 
-        const response = await fetch(url);
-        const json = await response.json();
-
-        setIsLoading(false);
-        setProduct(json);
-        console.log(json);
-      } catch (error) {
-        setIsLoading(false);
-        setIsError(true);
-      }
-    }
-    getData();
-  }, []);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-  if (isError) {
-    return <div>There's an error with the site</div>;
-  }
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Something went wrong</div>;
 
   return (
     <main>
       <ProductContainer className="productContainer">
-        <img src={product.imageUrl} />
-        <h1>{product.title}</h1>
-        <RatingContainer>{ratings(product.rating)}</RatingContainer>
-        <p>{product.description}</p>
+        <img src={imageUrl} />
+        <h1>{products.title}</h1>
+        <RatingContainer>{ratings(rating)}</RatingContainer>
+        <p>{description}</p>
         <ProductPrizing>
+          <p>{discountedPrice === price && <span>${price}</span>}</p>
           <p>
-            {product.discountedPrice === product.price && (
-              <span>${product.price}</span>
-            )}
-          </p>
-          <p>
-            {product.discountedPrice < product.price && (
-              <span className="newPrice">${product.discountedPrice}</span>
+            {discountedPrice < price && (
+              <span className="newPrice">${discountedPrice}</span>
             )}
           </p>
           <div>
             <p>
-              {product.discountedPrice < product.price && (
-                <span className="oldPrice">${product.price}</span>
+              {discountedPrice < price && (
+                <span className="oldPrice">${price}</span>
               )}
             </p>
             <p className="priceDiscount">
-              {product.discountedPrice < product.price && (
-                <span>$ {product.price - product.discountedPrice} off</span>
+              {discountedPrice < price && (
+                <span>$ {price - discountedPrice} off</span>
               )}
             </p>
           </div>
         </ProductPrizing>
         <BaseButton>Add to cart</BaseButton>
-        <ReviewsContainer></ReviewsContainer>
+        <Reviews results={reviews}></Reviews>
       </ProductContainer>
     </main>
   );
@@ -92,14 +78,10 @@ const ProductPrizing = styled.div`
   }
 `;
 
-const RatingContainer = styled.div`
+export const RatingContainer = styled.div`
   display: flex;
 
   p {
     margin-left: 25px;
   }
-`;
-
-const ReviewsContainer = styled.div`
-  border: 2px solid var(--color-secondary);
 `;
