@@ -6,7 +6,15 @@ export const ProductsPrize = styled.p`
   margin-bottom: 10px;
 `;
 
-export const ProductPrizing = styled.div``;
+export const ProductPrizing = styled.div`
+  margin-bottom: 30px;
+
+  span {
+    color: var(--color-secondary);
+    font-size: 18px;
+    font-weight: 600;
+  }
+`;
 
 export const ProductsDiscount = styled.p`
   color: var(--color-discount);
