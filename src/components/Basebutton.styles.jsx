@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const BaseButton = styled.button`
   color: var(--color-primary);
   font-size: 14px;
+  font-weight: 600;
   text-transform: uppercase;
   background-color: var(--color-secondary);
   border-style: none;
