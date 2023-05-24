@@ -36,6 +36,8 @@ export function Product() {
     title,
   } = products;
 
+  console.log(reviews?.length);
+
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Something went wrong</div>;
 
@@ -44,7 +46,11 @@ export function Product() {
       <ProductContainer className="productContainer">
         <img src={imageUrl} />
         <h1>{products.title}</h1>
-        <RatingContainer>{ratings(rating)}</RatingContainer>
+        <RatingContainer>
+          {ratings(rating)}
+          {reviews?.length > 0 && <p>({reviews?.length} ratings)</p>}
+        </RatingContainer>
+
         <p>{description}</p>
         <ProductPrizing>
           {discountedPrice === price && <span>${price}</span>}
