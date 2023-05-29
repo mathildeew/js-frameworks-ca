@@ -5,12 +5,12 @@ import {
   ProductsOldPrice,
   ProductsPrize,
 } from "../ui/Prizing/index";
-import { ProductsGrid } from "./ProductsGrid.styles";
+import { ProductsGridContainer } from "./ProductsGrid.styles";
 
-export default function HomeGrid(results) {
+export default function ProductsGrid(results) {
   const { results: products } = results;
   return (
-    <ProductsGrid>
+    <ProductsGridContainer>
       {products.map((product) => (
         <div key={product.id}>
           <img src={product.imageUrl} />
@@ -35,6 +35,6 @@ export default function HomeGrid(results) {
           </BaseButton>
         </div>
       ))}
-    </ProductsGrid>
+    </ProductsGridContainer>
   );
 }

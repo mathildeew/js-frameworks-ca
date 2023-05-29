@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import styled from "styled-components";
+import { useParams } from "react-router-dom";
 import { BaseButton } from "../Basebutton.styles";
 import { fetchApi } from "../Home/FetchApi";
 import { ProductContainer } from "./Product.styles";
@@ -15,10 +13,8 @@ import {
   DiscountContainer,
   ProductPrizing,
 } from "../ui/Prizing/index";
-import { ProductsGrid } from "../Home/ProductsGrid.styles";
 
 export function Product() {
-  // const [product, setProduct] = useState([]);
   let { id } = useParams();
   const url = `https://api.noroff.dev/api/v1/online-shop/${id}`;
 
@@ -37,8 +33,6 @@ export function Product() {
     title,
   } = products;
 
-  console.log(reviews?.length);
-
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Something went wrong</div>;
 
@@ -46,7 +40,7 @@ export function Product() {
     <main>
       <ProductContainer className="productContainer">
         <img src={imageUrl} />
-        <h1>{products.title}</h1>
+        <h1>{title}</h1>
         <RatingContainer>
           {ratings(rating)}
           {reviews?.length > 0 && <p>({reviews?.length} ratings)</p>}

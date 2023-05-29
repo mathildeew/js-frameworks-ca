@@ -1,13 +1,12 @@
 import * as Icons from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { fetchApi } from "../FetchApi";
-import HomeGrid from "../ProductsGrid";
+import { useApi } from "../../hooks/useApi";
+import ProductsGrid from "./ProductsGrid";
+import { SearchInput } from "./Search/Search.styles";
 
-import { SearchInput } from "./Search.styles";
-
-export default function Search() {
-  const { products, isLoading, isError } = fetchApi(
+export default function HomeContainer() {
+  const { products, isLoading, isError } = useApi(
     "https://api.noroff.dev/api/v1/online-shop"
   );
 
@@ -24,13 +23,18 @@ export default function Search() {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <div>
+    <main>
       <SearchInput>
-        <input placeholder="Search product" type="search" onChange={onSearch} />
+        <input
+          placeholder="Search product"
+          type="search"
+          onChange={onSearch}
+          value={searchedProduct}
+        />
         <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
       </SearchInput>
-      {!searchedProduct && <HomeGrid results={products} />}
-      {searchedProduct && <HomeGrid results={filteredProducts} />}
-    </div>
+      {!searchedProduct && <ProductsGrid results={products} />}
+      {searchedProduct && <ProductsGrid results={filteredProducts} />}
+    </main>
   );
 }

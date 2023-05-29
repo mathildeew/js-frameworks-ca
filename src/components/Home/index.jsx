@@ -1,11 +1,5 @@
-import HomeGrid from "./ProductsGrid";
-import Search from "./Search";
+import HomeContainer from "./HomeContainer";
 
 export function Home() {
-  return (
-    <main>
-      <Search />
-      {/* <HomeGrid /> */}
-    </main>
-  );
+  return <HomeContainer />;
 }

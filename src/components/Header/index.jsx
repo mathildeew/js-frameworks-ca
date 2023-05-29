@@ -8,6 +8,7 @@ import {
 } from "./Header.styles";
 import { useState } from "react";
 import { Nav } from "./Nav";
+import { useEffect } from "react";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -17,7 +18,9 @@ export default function Header() {
   }
 
   function CartCounter() {
-    return <span className="fa-layers-counter">{localStorage.length}</span>;
+    const productsInCart = localStorage.length;
+
+    return <span className="fa-layers-counter">{productsInCart}</span>;
   }
 
   return (
