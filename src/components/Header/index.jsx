@@ -16,6 +16,10 @@ export default function Header() {
     setShowMenu(!showMenu);
   }
 
+  function CartCounter() {
+    return <span className="fa-layers-counter">{localStorage.length}</span>;
+  }
+
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -23,7 +27,7 @@ export default function Header() {
         <IconsHeader>
           <span className="fa-layers fa-fw fa-lg">
             <FontAwesomeIcon icon={Icons.faBagShopping} />
-            <span className="fa-layers-counter">10</span>
+            <CartCounter />
           </span>
           <FontAwesomeIcon icon={Icons.faBars} onClick={onShowMenu} />
         </IconsHeader>
