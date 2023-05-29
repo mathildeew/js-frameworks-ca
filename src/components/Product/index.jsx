@@ -1,24 +1,23 @@
 import { useParams } from "react-router-dom";
-import { BaseButton } from "../Basebutton.styles";
-import { fetchApi } from "../Home/FetchApi";
+import { BaseButton } from "../ui/Basebutton.styles";
 import { ProductContainer } from "./Product.styles";
-import { ratings } from "../ui/Rating/rating";
-import { Reviews } from "./Reviews";
+import { ratings } from "../ui/Rating";
+import { Reviews } from "../ui/Reviews";
 import { RatingContainer } from "../ui/Rating/Rating.styles";
 import {
   ProductsDiscount,
   ProductsOldPrice,
-  ProductsPrize,
   ProductsPriceOff,
   DiscountContainer,
   ProductPrizing,
-} from "../ui/Prizing/index";
+} from "../ui/Prizing/Prizing.styles";
+import { useApi } from "../../hooks/useApi";
 
 export function Product() {
   let { id } = useParams();
   const url = `https://api.noroff.dev/api/v1/online-shop/${id}`;
 
-  const { products, isLoading, isError } = fetchApi(
+  const { products, isLoading, isError } = useApi(
     `https://api.noroff.dev/api/v1/online-shop/${id}`
   );
 

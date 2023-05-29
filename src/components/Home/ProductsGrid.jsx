@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { BaseButton } from "../Basebutton.styles";
+import { BaseButton } from "../ui/Basebutton.styles";
 import {
   ProductsDiscount,
   ProductsOldPrice,
   ProductsPrize,
-} from "../ui/Prizing/index";
+} from "../ui/Prizing/Prizing.styles";
 import { ProductsGridContainer } from "./ProductsGrid.styles";
 
 export default function ProductsGrid(results) {

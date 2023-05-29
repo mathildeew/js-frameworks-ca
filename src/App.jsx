@@ -1,43 +1,12 @@
 import { Routes, Route, Outlet } from "react-router-dom";
-import Header from "./components/Header/index";
-import Footer from "./components/Footer";
-import { Contact } from "./components/Contact";
+import { Layout } from "./components/ui/Layout";
+
 import { Home } from "./components/Home/index";
 import { Product } from "./components/Product/index";
-
-function Cart() {
-  return (
-    <div>
-      <h1>Cart</h1>
-    </div>
-  );
-}
-
-function CheckoutSuccess() {
-  return (
-    <div>
-      <h1>Checkout</h1>
-    </div>
-  );
-}
-
-function RouteNotFound() {
-  return (
-    <div>
-      <h1>Page not found</h1>
-    </div>
-  );
-}
-
-function Layout() {
-  return (
-    <div>
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-}
+import { Cart } from "./components/Cart";
+import { Checkout } from "./components/Checkout";
+import { Contact } from "./components/Contact";
+import { NotFound } from "./components/Notfound";
 
 export default function App() {
   return (
@@ -46,9 +15,9 @@ export default function App() {
         <Route index element={<Home />}></Route>
         <Route path="product/:id" element={<Product />}></Route>
         <Route path="cart" element={<Cart />}></Route>
-        <Route path="checkoutsuccess" element={<CheckoutSuccess />}></Route>
+        <Route path="checkoutsuccess" element={<Checkout />}></Route>
         <Route path="contactus" element={<Contact />}></Route>
-        <Route path="*" element={<RouteNotFound />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Route>
     </Routes>
   );
