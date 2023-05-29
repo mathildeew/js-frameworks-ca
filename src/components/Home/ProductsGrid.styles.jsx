@@ -18,4 +18,8 @@ export const ProductsGridContainer = styled.section`
     object-fit: cover;
     margin-bottom: 10px;
   }
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
