@@ -5,21 +5,33 @@ import { useState } from "react";
 import { createContext } from "react";
 import { Cart } from "../components/Cart";
 
-const CartStateContext = createContext();
-const CartDispatchContext = createContext();
+// https://github.com/piyush-eon/React-shopping-cart-context-with-reducer/blob/master/src/context/Reducers.js
+
+// https://github.com/thapatechnical/thapareactecom/blob/ecom_cart_final_v53/src/context/cart_context.js
+
+export const CartStateContext = createContext();
+export const CartDispatchContext = createContext();
 
 const reducer = (state, action) => {
-  let productIndex;
-  let newTotal;
-  let cart;
-  let qty;
+  // const itemInCart = state.item;
+  // let payloadItem = action.payload;
+  // const checkPayload = itemInCart.find((item) => item.id === payloadItem.id);
 
   switch (action.type) {
     case "ADD":
       return {
         ...state,
-        cart: [...state.cart, { ...action.payload, qty: +1 }],
+        item: [...state.item, { ...action.payload }],
       };
+
+    // case "REMOVE":
+    //   return {};
+
+    // case "INCREASE":
+    //   return {};
+
+    // case "DECREASE":
+    //   return {};
 
     default:
       return state;
@@ -27,12 +39,12 @@ const reducer = (state, action) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const initialCartState = { cart: [], total: 0, qty: 0 };
+  const initialCartState = { item: [], total: 0 };
 
   const [state, dispatch] = useReducer(reducer, initialCartState);
 
   useEffect(() => {
-    localStorage.setItem("item", JSON.stringify(state));
+    localStorage.setItem("cart", JSON.stringify(state));
   }, [state]);
 
   return (

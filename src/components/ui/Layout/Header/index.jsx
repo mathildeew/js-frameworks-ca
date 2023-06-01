@@ -20,9 +20,10 @@ export default function Header() {
   }
 
   function CartCounter() {
-    const itemsInCart = useCart();
+    const cartState = useCart();
+    console.log(cartState);
 
-    return <span className="fa-layers-counter">{itemsInCart.length}</span>;
+    return <span className="fa-layers-counter">{}</span>;
   }
 
   return (

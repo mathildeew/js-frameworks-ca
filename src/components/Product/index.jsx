@@ -36,13 +36,10 @@ export function Product() {
   // Context
   const items = useCart();
 
-  console.log(items.length);
-
   // // // // // Add to cart
   const dispatch = useDispatchCart();
 
   function addToCart() {
-    console.log(products);
     dispatch({ type: "ADD", payload: products });
   }
 
