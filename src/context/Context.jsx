@@ -12,12 +12,13 @@ const reducer = (state, action) => {
   let productIndex;
   let newTotal;
   let cart;
+  let qty;
 
   switch (action.type) {
     case "ADD":
       return {
         ...state,
-        cart: [...state.cart, { ...action.payload, qty: 1 }],
+        cart: [...state.cart, { ...action.payload, qty: +1 }],
       };
 
     default:
@@ -26,7 +27,7 @@ const reducer = (state, action) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const initialCartState = { cart: [], total: 0 };
+  const initialCartState = { cart: [], total: 0, qty: 0 };
 
   const [state, dispatch] = useReducer(reducer, initialCartState);
 
