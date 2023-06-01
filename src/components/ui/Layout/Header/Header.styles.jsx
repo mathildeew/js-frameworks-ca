@@ -16,7 +16,7 @@ export const HeaderContent = styled.div`
   padding-right: 12px;
 `;
 
-export const Logo = styled.a`
+export const Logo = styled.span`
   color: var(--color-primary);
   font-size: 25px;
   font-family: ${({ theme: { font } }) => font.primary};

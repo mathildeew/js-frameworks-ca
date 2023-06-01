@@ -1,4 +1,4 @@
-export default function reducer(state, action) {
+ default function reducer(state, action) {
   let price = action.payload.price;
   let total = state.total;
 

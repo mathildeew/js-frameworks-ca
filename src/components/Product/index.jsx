@@ -12,23 +12,9 @@ import {
   ProductPrizing,
 } from "../ui/Prizing/Prizing.styles";
 import { useApi } from "../../hooks/useApi";
-// import { CartContext, CartState, Context } from "../../context/Context";
-import { useReducer } from "react";
-import reducer from "../../context/Reducer";
-import { useEffect } from "react";
+import { useCart, useDispatchCart } from "../../context/Context";
 
 export function Product() {
-  //Context
-  const initialState = { cart: [], total: 0 };
-  const [state, dispatch] = useReducer(reducer, initialState, () => {
-    const dataStored = localStorage.getItem("cart");
-    return dataStored ? JSON.parse(dataStored) : initialState;
-  });
-
-  useEffect(() => localStorage.setItem("item", JSON.stringify(state)), [state]);
-
-  //// End of context
-
   let { id } = useParams();
   const url = `https://api.noroff.dev/api/v1/online-shop/${id}`;
 
@@ -47,8 +33,17 @@ export function Product() {
     title,
   } = products;
 
+  // Context
+  const items = useCart();
+
+  console.log(items.length);
+
+  // // // // // Add to cart
+  const dispatch = useDispatchCart();
+
   function addToCart() {
-    dispatch({ type: "addProduct", payload: products });
+    console.log(products);
+    dispatch({ type: "ADD", payload: products });
   }
 
   if (isLoading) return <div>Loading...</div>;

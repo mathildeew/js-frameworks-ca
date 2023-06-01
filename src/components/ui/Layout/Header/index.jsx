@@ -9,6 +9,8 @@ import {
 import { useState } from "react";
 import { Nav } from "./Nav";
 import { useEffect } from "react";
+import { useCart } from "../../../../context/Context";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -18,15 +20,17 @@ export default function Header() {
   }
 
   function CartCounter() {
-    const productsInCart = localStorage.length;
+    const itemsInCart = useCart();
 
-    return <span className="fa-layers-counter">{productsInCart}</span>;
+    return <span className="fa-layers-counter">{itemsInCart.length}</span>;
   }
 
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Logo href="/">Brand</Logo>
+        <Logo>
+          <Link to="/">Brand</Link>
+        </Logo>
         <IconsHeader>
           <span className="fa-layers fa-fw fa-lg">
             <FontAwesomeIcon icon={Icons.faBagShopping} />
