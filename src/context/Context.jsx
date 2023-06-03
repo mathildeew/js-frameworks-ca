@@ -10,7 +10,9 @@ import { createContext } from "react";
 const CartStateContext = createContext();
 const CartDispatchContext = createContext();
 
-const reducer = (state, action) => {
+export const initialState = { item: [], total: 0, qty: 0 };
+
+const reducer = (state, action, initialState) => {
   let products = state.item;
   let addedProduct = action.payload;
   let newTotal;
@@ -60,13 +62,19 @@ const reducer = (state, action) => {
         qty: state.qty,
       };
 
+    case "CLEAR":
+      return {
+        item: [],
+        total: 0,
+        qty: 0,
+      };
+
     default:
       return state;
   }
 };
 
 export const CartProvider = ({ children }) => {
-  const initialState = { item: [], total: 0, qty: 0 };
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {

@@ -55,7 +55,7 @@ export function Cart() {
         <TotalContainer>
           <p>Total: </p>
         </TotalContainer>
-        <BaseButton>
+        <BaseButton onClick={() => dispatch({ type: "CLEAR", payload: [] })}>
           <Link to="/checkoutsuccess">Proceed to checkout</Link>
         </BaseButton>
       </CartContainer>
