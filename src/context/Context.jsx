@@ -11,54 +11,57 @@ const CartStateContext = createContext();
 const CartDispatchContext = createContext();
 
 const reducer = (state, action) => {
-  let item;
-  let productIndex;
+  let products = state.item;
+  let addedProduct = action.payload;
   let newTotal;
+  const sameProduct = products.find((item) => item.id === addedProduct.id);
 
+  const addProduct = products.map((product) => {
+    if (product.id === addedProduct.id) {
+      return { ...product, qty: product.qty + 1 };
+    }
+  });
+
+  const removeProduct = products.map((product) => {
+    if (product.id === addedProduct.id) {
+      return { ...product, qty: product.qty - 1 };
+    }
+  });
   switch (action.type) {
     case "ADD":
-      return { ...state, item: [...state.item, { ...action.payload, qty: 1 }] };
+      if (!sameProduct)
+        return {
+          item: [...products, { ...addedProduct, qty: 1 }],
+          qty: state.qty + 1,
+          total: newTotal,
+        };
+      return {
+        item: addProduct,
+        qty: state.qty + 1,
+      };
 
     case "REMOVE":
-      item = [...state.item];
-      productIndex = item.findIndex(
-        (product) => product.id === action.payload.id
-      );
-      if (productIndex !== -1) {
-        if (item[productIndex].quantity > 1) {
-          item = [
-            ...item.slice(0, productIndex),
-            {
-              ...item[productIndex],
-              quantity: item[productIndex].quantity - 1,
-            },
-            ...item.slice(productIndex + 1),
-          ];
-        } else {
-          item = [
-            ...item.slice(0, productIndex),
-            ...item.slice(productIndex + 1),
-          ];
-        }
-      }
       newTotal = 0;
-      // cart.reduce((currentTotal, product) => {
-      //   currentTotal += product.discountedPrice * product.quantity;
-      //   return currentTotal;
-      // }, 0);
-      return { ...state, item: item, total: newTotal };
 
+      return {
+        item: products.filter((item) => item.id !== addedProduct.id),
+      };
+
+    case "DECREASE":
+      return {
+        item: removeProduct,
+        qty: state.qty - 1,
+      };
     default:
       return state;
   }
 };
 
 export const CartProvider = ({ children }) => {
-  const initialState = { item: [], total: 0 };
+  const initialState = { item: [], total: 0, qty: 0 };
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    console.log(state);
     localStorage.setItem("cart", JSON.stringify(state));
   }, [state]);
 
