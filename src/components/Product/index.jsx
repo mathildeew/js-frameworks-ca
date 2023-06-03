@@ -35,8 +35,8 @@ export function Product() {
     title,
   } = products;
 
-  const addToCart = (item) => {
-    dispatch({ type: "ADD", item });
+  const addToCart = (products) => {
+    dispatch({ type: "ADD", payload: products });
   };
 
   if (isLoading) return <div>Loading...</div>;

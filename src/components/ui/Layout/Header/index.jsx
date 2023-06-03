@@ -19,7 +19,12 @@ export default function Header() {
   }
 
   function CartCounter() {
-    const itemsInCart = useCart() || [];
+    const cartStorage = useCart() || [];
+    const itemsInCart = cartStorage.item;
+
+    if (itemsInCart === undefined) {
+      return <span className="fa-layers-counter">0</span>;
+    }
 
     return <span className="fa-layers-counter">{itemsInCart.length}</span>;
   }

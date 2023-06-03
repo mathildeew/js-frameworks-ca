@@ -11,9 +11,42 @@ const CartStateContext = createContext();
 const CartDispatchContext = createContext();
 
 const reducer = (state, action) => {
+  let item;
+  let productIndex;
+  let newTotal;
+
   switch (action.type) {
     case "ADD":
-      return [...state, action.item];
+      return { ...state, item: [...state.item, { ...action.payload, qty: 1 }] };
+
+    case "REMOVE":
+      item = [...state.item];
+      productIndex = item.findIndex(
+        (product) => product.id === action.payload.id
+      );
+      if (productIndex !== -1) {
+        if (item[productIndex].quantity > 1) {
+          item = [
+            ...item.slice(0, productIndex),
+            {
+              ...item[productIndex],
+              quantity: item[productIndex].quantity - 1,
+            },
+            ...item.slice(productIndex + 1),
+          ];
+        } else {
+          item = [
+            ...item.slice(0, productIndex),
+            ...item.slice(productIndex + 1),
+          ];
+        }
+      }
+      newTotal = 0;
+      // cart.reduce((currentTotal, product) => {
+      //   currentTotal += product.discountedPrice * product.quantity;
+      //   return currentTotal;
+      // }, 0);
+      return { ...state, item: item, total: newTotal };
 
     default:
       return state;
@@ -21,9 +54,11 @@ const reducer = (state, action) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, []);
+  const initialState = { item: [], total: 0 };
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    console.log(state);
     localStorage.setItem("cart", JSON.stringify(state));
   }, [state]);
 

@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useCart } from "../../context/Context";
+import { useCart, useDispatchCart } from "../../context/Context";
 import { BaseButton } from "../ui/Basebutton.styles";
 
 export function Cart() {
   const cartStorage = useCart();
-  console.log(cartStorage);
+  const itemsInCart = cartStorage.item;
 
-  if (cartStorage.lenght === 0) {
+  const dispatch = useDispatchCart();
+  console.log(itemsInCart);
+
+  if (itemsInCart.length === 0) {
     return (
       <div>
-        <h1>Your cart is empyt</h1>
+        <h1>Your cart is empty</h1>
       </div>
     );
   }
@@ -20,13 +23,17 @@ export function Cart() {
       <h1>Your cart</h1>
       <CartContainer>
         <CartItemContainer>
-          {cartStorage.map((product) => (
+          {itemsInCart.map((product) => (
             <div key={product.id}>
               <img src={product.imageUrl} />
               <div>
                 <h2>{product.title}</h2>
                 <p>{product.price}</p>
-                <p>Remove product</p>
+                <button
+                  onClick={() => dispatch({ type: "REMOVE", payload: product })}
+                >
+                  Remove product
+                </button>
               </div>
             </div>
           ))}
@@ -34,7 +41,7 @@ export function Cart() {
           <hr />
         </CartItemContainer>
         <TotalContainer>
-          <p>Total: $ 2079.99</p>
+          <p>Total: </p>
         </TotalContainer>
         <BaseButton>
           <Link to="/checkoutsuccess">Proceed to checkout</Link>
