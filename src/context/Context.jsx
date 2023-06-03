@@ -27,6 +27,7 @@ const reducer = (state, action) => {
       return { ...product, qty: product.qty - 1 };
     }
   });
+
   switch (action.type) {
     case "ADD":
       if (!sameProduct)
@@ -37,21 +38,28 @@ const reducer = (state, action) => {
         };
       return {
         item: addProduct,
-        qty: state.qty + 1,
+        qty: state.qty,
       };
 
     case "REMOVE":
       newTotal = 0;
-
       return {
         item: products.filter((item) => item.id !== addedProduct.id),
+        qty: state.qty - 1,
       };
 
     case "DECREASE":
+      if (addedProduct.qty === 1) {
+        return {
+          item: products.filter((item) => item.id !== addedProduct.id),
+          qty: state.qty - 1,
+        };
+      }
       return {
         item: removeProduct,
-        qty: state.qty - 1,
+        qty: state.qty,
       };
+
     default:
       return state;
   }
