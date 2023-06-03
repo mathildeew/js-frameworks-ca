@@ -12,9 +12,11 @@ import {
   ProductPrizing,
 } from "../ui/Prizing/Prizing.styles";
 import { useApi } from "../../hooks/useApi";
-import { useCart, useDispatchCart } from "../../context/Context";
+import { useDispatchCart } from "../../context/Context";
 
 export function Product() {
+  const dispatch = useDispatchCart();
+
   let { id } = useParams();
   const url = `https://api.noroff.dev/api/v1/online-shop/${id}`;
 
@@ -33,15 +35,9 @@ export function Product() {
     title,
   } = products;
 
-  // Context
-  const items = useCart();
-
-  // // // // // Add to cart
-  const dispatch = useDispatchCart();
-
-  function addToCart() {
-    dispatch({ type: "ADD", payload: products });
-  }
+  const addToCart = (item) => {
+    dispatch({ type: "ADD", item });
+  };
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Something went wrong</div>;
@@ -73,7 +69,7 @@ export function Product() {
             <ProductsOldPrice>${price}</ProductsOldPrice>
           )}
         </ProductPrizing>
-        <BaseButton onClick={addToCart}>Add to cart</BaseButton>
+        <BaseButton onClick={() => addToCart(products)}>Add to cart</BaseButton>
         <Reviews results={reviews}></Reviews>
       </ProductContainer>
     </main>

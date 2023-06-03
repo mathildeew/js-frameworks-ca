@@ -9,29 +9,13 @@ import { Cart } from "../components/Cart";
 
 // https://github.com/thapatechnical/thapareactecom/blob/ecom_cart_final_v53/src/context/cart_context.js
 
-export const CartStateContext = createContext();
-export const CartDispatchContext = createContext();
+const CartStateContext = createContext();
+const CartDispatchContext = createContext();
 
 const reducer = (state, action) => {
-  // const itemInCart = state.item;
-  // let payloadItem = action.payload;
-  // const checkPayload = itemInCart.find((item) => item.id === payloadItem.id);
-
   switch (action.type) {
     case "ADD":
-      return {
-        ...state,
-        item: [...state.item, { ...action.payload }],
-      };
-
-    // case "REMOVE":
-    //   return {};
-
-    // case "INCREASE":
-    //   return {};
-
-    // case "DECREASE":
-    //   return {};
+      return [...state, action.item];
 
     default:
       return state;
@@ -39,17 +23,15 @@ const reducer = (state, action) => {
 };
 
 export const CartProvider = ({ children }) => {
-  const initialCartState = { item: [], total: 0 };
-
-  const [state, dispatch] = useReducer(reducer, initialCartState);
+  const [state, dispatch] = useReducer(reducer, []);
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state));
   }, [state]);
 
   return (
-    <CartDispatchContext.Provider value={(state, dispatch)}>
-      <CartStateContext.Provider value={(state, dispatch)}>
+    <CartDispatchContext.Provider value={dispatch}>
+      <CartStateContext.Provider value={state}>
         {children}
       </CartStateContext.Provider>
     </CartDispatchContext.Provider>

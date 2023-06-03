@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useCart } from "../../context/Context";
 import { BaseButton } from "../ui/Basebutton.styles";
 
 export function Cart() {
-  const cartState = useCart();
-  console.log(cartState);
-
   return (
     <main>
       <h1>Your cart</h1>

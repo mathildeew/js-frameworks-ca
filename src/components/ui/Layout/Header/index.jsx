@@ -8,9 +8,8 @@ import {
 } from "./Header.styles";
 import { useState } from "react";
 import { Nav } from "./Nav";
-import { useEffect } from "react";
-import { useCart } from "../../../../context/Context";
 import { Link } from "react-router-dom";
+import { useCart } from "../../../../context/Context";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -20,10 +19,9 @@ export default function Header() {
   }
 
   function CartCounter() {
-    const cartState = useCart();
-    console.log(cartState);
+    const itemsInCart = useCart();
 
-    return <span className="fa-layers-counter">{}</span>;
+    return <span className="fa-layers-counter">{itemsInCart.length}</span>;
   }
 
   return (
