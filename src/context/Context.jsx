@@ -1,9 +1,7 @@
 import { useReducer } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
-import { useState } from "react";
 import { createContext } from "react";
-import { Cart } from "../components/Cart";
 
 // https://github.com/piyush-eon/React-shopping-cart-context-with-reducer/blob/master/src/context/Reducers.js
 

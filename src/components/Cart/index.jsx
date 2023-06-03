@@ -1,21 +1,36 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useCart } from "../../context/Context";
 import { BaseButton } from "../ui/Basebutton.styles";
 
 export function Cart() {
+  const cartStorage = useCart();
+  console.log(cartStorage);
+
+  if (cartStorage.lenght === 0) {
+    return (
+      <div>
+        <h1>Your cart is empyt</h1>
+      </div>
+    );
+  }
+
   return (
     <main>
       <h1>Your cart</h1>
       <CartContainer>
         <CartItemContainer>
-          <div>
-            <img src="../../assets/0-usb-plug.jpeg" />
-            <div>
-              <h2>Product 1</h2>
-              <p>$ 2079.99</p>
-              <p>Remove product</p>
+          {cartStorage.map((product) => (
+            <div key={product.id}>
+              <img src={product.imageUrl} />
+              <div>
+                <h2>{product.title}</h2>
+                <p>{product.price}</p>
+                <p>Remove product</p>
+              </div>
             </div>
-          </div>
+          ))}
+
           <hr />
         </CartItemContainer>
         <TotalContainer>

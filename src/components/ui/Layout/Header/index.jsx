@@ -19,7 +19,7 @@ export default function Header() {
   }
 
   function CartCounter() {
-    const itemsInCart = useCart();
+    const itemsInCart = useCart() || [];
 
     return <span className="fa-layers-counter">{itemsInCart.length}</span>;
   }
@@ -31,10 +31,12 @@ export default function Header() {
           <Link to="/">Brand</Link>
         </Logo>
         <IconsHeader>
-          <span className="fa-layers fa-fw fa-lg">
-            <FontAwesomeIcon icon={Icons.faBagShopping} />
-            <CartCounter />
-          </span>
+          <Link to="/cart">
+            <span className="fa-layers fa-fw fa-lg">
+              <FontAwesomeIcon icon={Icons.faBagShopping} />
+              <CartCounter />
+            </span>
+          </Link>
           <FontAwesomeIcon icon={Icons.faBars} onClick={onShowMenu} />
         </IconsHeader>
       </HeaderContent>
