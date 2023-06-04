@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BaseButton } from "../ui/Basebutton.styles";
+import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import {
   ProductsDiscount,
   ProductsOldPrice,

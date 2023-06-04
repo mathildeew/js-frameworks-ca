@@ -2,7 +2,7 @@ import { useDispatchCart } from "../../context/Context";
 import { useApi } from "../../hooks/useApi";
 import { useParams } from "react-router-dom";
 import { ProductContainer } from "./Product.styles";
-import { BaseButton } from "../ui/Basebutton.styles";
+import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { ratings } from "../ui/Rating";
 import { Reviews } from "../ui/Reviews";
 import { RatingContainer } from "../ui/Rating/Rating.styles";

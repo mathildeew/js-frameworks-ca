@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FormContainer } from "./FormContainer.styles";
-import { BaseButton } from "../ui/Basebutton.styles";
+import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 
 export function Contact() {
   const [name, setName] = useState("");

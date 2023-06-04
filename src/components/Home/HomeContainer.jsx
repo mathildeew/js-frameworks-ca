@@ -4,6 +4,7 @@ import ProductsGrid from "./ProductsGrid";
 import { SearchInput } from "./Search/Search.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Loader } from "../ui/Loader";
 
 export default function HomeContainer() {
   const { products, isLoading, isError } = useApi(
@@ -19,7 +20,7 @@ export default function HomeContainer() {
     product.title.toLowerCase().includes(searchedProduct.toLowerCase())
   );
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader></Loader>;
   if (isError) return <div>Something went wrong</div>;
 
   return (
