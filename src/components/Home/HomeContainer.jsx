@@ -24,17 +24,24 @@ export default function HomeContainer() {
 
   return (
     <main>
-      <SearchInput>
-        <input
-          placeholder="Search product"
-          type="search"
-          onChange={onSearch}
-          value={searchedProduct}
-        />
-        <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
-      </SearchInput>
-      {!searchedProduct && <ProductsGrid results={products} />}
-      {searchedProduct && <ProductsGrid results={filteredProducts} />}
+      <section>
+        <h1>Popular categories</h1>
+      </section>
+      <section>
+        <h1>All products</h1>
+
+        <SearchInput>
+          <input
+            placeholder="Search product"
+            type="search"
+            onChange={onSearch}
+            value={searchedProduct}
+          />
+          <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
+        </SearchInput>
+        {!searchedProduct && <ProductsGrid results={products} />}
+        {searchedProduct && <ProductsGrid results={filteredProducts} />}
+      </section>
     </main>
   );
 }

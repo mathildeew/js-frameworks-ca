@@ -1,15 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Icons from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { useCart } from "../../../../context/Context";
 import {
   HeaderContainer,
   HeaderContent,
-  IconsHeader,
   Logo,
+  MenuIconContainer,
 } from "./Header.styles";
-import { useState } from "react";
 import { Nav } from "./Nav";
 import { Link } from "react-router-dom";
-import { useCart } from "../../../../context/Context";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBagShopping, faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -28,18 +28,18 @@ export default function Header() {
     <HeaderContainer>
       <HeaderContent>
         <Logo>
-          <Link to="/">Brand</Link>
+          <Link to="/">Sjåpp</Link>
         </Logo>
-        <IconsHeader>
-          <Link to="/cart">
-            <span className="fa-layers fa-fw fa-lg">
-              <FontAwesomeIcon icon={Icons.faBagShopping} />
-              <CartCounter />
-            </span>
-          </Link>
-          <FontAwesomeIcon icon={Icons.faBars} onClick={onShowMenu} />
-        </IconsHeader>
+        <Link to="/cart">
+          <span className="fa-layers fa-fw fa-lg">
+            <FontAwesomeIcon icon={faBagShopping} />
+            <CartCounter />
+          </span>
+        </Link>
       </HeaderContent>
+      <MenuIconContainer>
+        <FontAwesomeIcon icon={faBars} onClick={onShowMenu} />
+      </MenuIconContainer>
       {showMenu ? <Nav /> : true}
     </HeaderContainer>
   );
