@@ -1,9 +1,9 @@
-import * as Icons from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useApi } from "../../hooks/useApi";
 import ProductsGrid from "./ProductsGrid";
 import { SearchInput } from "./Search/Search.styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function HomeContainer() {
   const { products, isLoading, isError } = useApi(
@@ -37,7 +37,7 @@ export default function HomeContainer() {
             onChange={onSearch}
             value={searchedProduct}
           />
-          <FontAwesomeIcon icon={Icons.faMagnifyingGlass} />
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
         </SearchInput>
         {!searchedProduct && <ProductsGrid results={products} />}
         {searchedProduct && <ProductsGrid results={filteredProducts} />}

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const SearchInput = styled.div`
-  background: var(--color-primary);
-  border: 2px solid var(--color-secondary);
+  background: var(--color-white);
+  border: 2px solid var(--color-primary);
   height: 35px;
   display: flex;
   align-items: center;
@@ -10,6 +10,7 @@ export const SearchInput = styled.div`
   margin-bottom: 50px;
 
   input {
+    font-size: 14px;
     background: none;
     border: none;
     outline: none;
@@ -18,7 +19,8 @@ export const SearchInput = styled.div`
   }
 
   input::placeholder {
-    color: var(--color-secondary);
+    color: var(--color-primary);
+    font-size: 14px;
   }
 
   input[type="search"]::-webkit-search-cancel-button,
@@ -29,6 +31,7 @@ export const SearchInput = styled.div`
   }
 
   svg {
+    color: var(--color-primary);
     margin-right: 12px;
   }
 `;
