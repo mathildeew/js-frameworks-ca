@@ -3,13 +3,37 @@ import styled from "styled-components";
 import { useCart, useDispatchCart } from "../../context/Context";
 import { BaseButton } from "../ui/Basebutton.styles";
 
+export default function CartItem({ product }) {
+  const dispatch = useDispatchCart();
+
+  return (
+    <>
+      <img src={product.imageUrl} />
+      <div>
+        <h2>{product.title}</h2>
+        <p>{product.price}</p>
+        <button
+          onClick={() => dispatch({ type: "DECREASE", payload: product })}
+        >
+          -
+        </button>
+        <button onClick={() => dispatch({ type: "REMOVE", payload: product })}>
+          Remove product
+        </button>
+        <button onClick={() => dispatch({ type: "ADD", payload: product })}>
+          +
+        </button>
+      </div>
+      <hr />
+    </>
+  );
+}
+
 export function Cart() {
   const cartStorage = useCart();
-  const itemsInCart = cartStorage.item;
-
   const dispatch = useDispatchCart();
-  console.log(itemsInCart);
 
+  const itemsInCart = cartStorage.item;
   if (itemsInCart.length === 0) {
     return (
       <div>
@@ -24,33 +48,8 @@ export function Cart() {
       <CartContainer>
         <CartItemContainer>
           {itemsInCart.map((product) => (
-            <div key={product.id}>
-              <img src={product.imageUrl} />
-              <div>
-                <h2>{product.title}</h2>
-                <p>{product.price}</p>
-                <button
-                  onClick={() =>
-                    dispatch({ type: "DECREASE", payload: product })
-                  }
-                >
-                  -
-                </button>
-                <button
-                  onClick={() => dispatch({ type: "REMOVE", payload: product })}
-                >
-                  Remove product
-                </button>
-                <button
-                  onClick={() => dispatch({ type: "ADD", payload: product })}
-                >
-                  +
-                </button>
-              </div>
-            </div>
+            <CartItem product={product} key={product.id}></CartItem>
           ))}
-
-          <hr />
         </CartItemContainer>
         <TotalContainer>
           <p>Total: $ {cartStorage.total}</p>
