@@ -4,7 +4,9 @@ import { FooterContainer } from "./FooterContainer";
 export default function Footer() {
   return (
     <FooterContainer>
-      <p>Brand</p>
+      <Link to="/">
+        <img src="../../../../../src/assets/logo-lg.svg" />
+      </Link>
       <ul>
         <li>
           <Link to="/">Home</Link>

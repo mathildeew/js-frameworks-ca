@@ -3,7 +3,6 @@ import { useCart } from "../../../../context/Context";
 import {
   HeaderContainer,
   HeaderContent,
-  Logo,
   MenuIconContainer,
 } from "./Header.styles";
 import { Nav } from "./Nav";
@@ -27,9 +26,9 @@ export default function Header() {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Logo>
-          <Link to="/">Sjåpp</Link>
-        </Logo>
+        <Link to="/">
+          <img src="../../../../../src/assets/logo-sm.svg" />
+        </Link>
         <Link to="/cart">
           <span className="fa-layers fa-fw fa-lg">
             <FontAwesomeIcon icon={faBagShopping} />

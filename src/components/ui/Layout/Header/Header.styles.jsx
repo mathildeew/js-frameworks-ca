@@ -31,12 +31,6 @@ export const HeaderContent = styled.div`
   }
 `;
 
-export const Logo = styled.span`
-  font-size: 25px;
-  font-family: ${({ theme: { font } }) => font.primary};
-  text-decoration: none;
-`;
-
 export const MenuIconContainer = styled.div`
   background: var(--color-secondary);
   height: 100%;
