@@ -12,4 +12,8 @@ export const ProductContainer = styled.section`
   p {
     margin-bottom: 10px;
   }
+
+  hr {
+    margin-bottom: 30px;
+  }
 `;

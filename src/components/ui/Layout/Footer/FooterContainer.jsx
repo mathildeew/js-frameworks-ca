@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
-  background: var(--color-secondary);
+  background: var(--color-primary);
   height: 100px;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@ export const FooterContainer = styled.footer`
 
   a,
   p {
-    color: var(--color-primary);
+    color: var(--color-white);
   }
 
   ul {

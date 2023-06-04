@@ -1,6 +1,8 @@
+import { useDispatchCart } from "../../context/Context";
+import { useApi } from "../../hooks/useApi";
 import { useParams } from "react-router-dom";
-import { BaseButton } from "../ui/Basebutton.styles";
 import { ProductContainer } from "./Product.styles";
+import { BaseButton } from "../ui/Basebutton.styles";
 import { ratings } from "../ui/Rating";
 import { Reviews } from "../ui/Reviews";
 import { RatingContainer } from "../ui/Rating/Rating.styles";
@@ -11,8 +13,6 @@ import {
   DiscountContainer,
   ProductPrizing,
 } from "../ui/Prizing/Prizing.styles";
-import { useApi } from "../../hooks/useApi";
-import { useDispatchCart } from "../../context/Context";
 
 export function Product() {
   const dispatch = useDispatchCart();
@@ -70,6 +70,7 @@ export function Product() {
           )}
         </ProductPrizing>
         <BaseButton onClick={() => addToCart(products)}>Add to cart</BaseButton>
+        <hr />
         <Reviews results={reviews}></Reviews>
       </ProductContainer>
     </main>

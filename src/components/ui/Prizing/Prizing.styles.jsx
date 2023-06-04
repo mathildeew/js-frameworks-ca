@@ -10,7 +10,7 @@ export const ProductPrizing = styled.div`
   margin-bottom: 30px;
 
   span {
-    color: var(--color-secondary);
+    color: var(--color-black);
     font-size: 18px;
     font-weight: 600;
   }
