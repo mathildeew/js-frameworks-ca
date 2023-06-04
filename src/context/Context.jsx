@@ -16,6 +16,7 @@ const reducer = (state, action, initialState) => {
   let products = state.item;
   let addedProduct = action.payload;
   let newTotal;
+  const totalProductPrice = addedProduct.qty * addedProduct.discountedPrice;
   const sameProduct = products.find((item) => item.id === addedProduct.id);
 
   const addProduct = products.map((product) => {
@@ -36,18 +37,19 @@ const reducer = (state, action, initialState) => {
         return {
           item: [...products, { ...addedProduct, qty: 1 }],
           qty: state.qty + 1,
-          total: newTotal,
+          total: state.total + addedProduct.discountedPrice,
         };
       return {
         item: addProduct,
         qty: state.qty,
+        total: state.total + addedProduct.discountedPrice,
       };
 
     case "REMOVE":
-      newTotal = 0;
       return {
         item: products.filter((item) => item.id !== addedProduct.id),
         qty: state.qty - 1,
+        total: state.total - totalProductPrice,
       };
 
     case "DECREASE":
@@ -55,11 +57,13 @@ const reducer = (state, action, initialState) => {
         return {
           item: products.filter((item) => item.id !== addedProduct.id),
           qty: state.qty - 1,
+          total: state.total - addedProduct.discountedPrice,
         };
       }
       return {
         item: removeProduct,
         qty: state.qty,
+        total: state.total - addedProduct.discountedPrice,
       };
 
     case "CLEAR":
