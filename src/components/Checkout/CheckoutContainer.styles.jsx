@@ -4,7 +4,7 @@ export const CheckoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid var(--color-secondary);
+  border: 2px solid var(--color-primary);
   margin-bottom: 50px;
   padding: 15px;
 
@@ -19,7 +19,8 @@ export const CheckoutContainer = styled.div`
   }
 
   a {
-    color: var(--color-secondary);
+    color: var(--color-primary);
+    font-weight: 600;
     text-decoration: underline;
   }
 `;

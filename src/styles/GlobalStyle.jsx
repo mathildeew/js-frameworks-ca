@@ -40,8 +40,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-
-
 a {
     color: var(--color-white);
     text-decoration: none;
@@ -49,6 +47,11 @@ a {
 
 li {
     list-style: none;
+}
+
+hr {
+   
+   border-color: var(--color-primary);
 }
 
 `;

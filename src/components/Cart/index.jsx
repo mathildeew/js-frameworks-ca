@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import { useCart, useDispatchCart } from "../../context/Context";
-import { BaseButton } from "../ui/Basebutton.styles";
 import { CartContainer, TotalContainer } from "./Cart.styled";
 import { CartItemContainer } from "./CartItem/CartItem.styled";
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
+import { BaseButton } from "../ui/Basebutton.styles";
 
 export function Cart() {
   const cartStorage = useCart();
