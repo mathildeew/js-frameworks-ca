@@ -1,20 +1,20 @@
-import { ratings } from "../Rating";
+import { Ratings } from "../Rating";
 import { RatingContainer } from "../Rating/Rating.styles";
 import { ReviewContainer } from "./Reviews.styles";
 
-export function Reviews(results) {
-  const { results: reviews } = results;
+export function Reviews(data) {
+  const { data: reviews } = data;
 
   return (
-    <div>
+    <>
       <h2>Reviews</h2>
       {reviews?.map((review) => (
         <ReviewContainer key={review.id}>
-          <RatingContainer>{ratings(review.rating)}</RatingContainer>
+          <RatingContainer>{Ratings(review.rating)}</RatingContainer>
           <h2>{review.username}</h2>
           <p>{review.description}</p>
         </ReviewContainer>
       ))}
-    </div>
+    </>
   );
 }

@@ -21,5 +21,6 @@ export const ProductsGridContainer = styled.section`
 
   @media (min-width: 480px) {
     grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
   }
 `;

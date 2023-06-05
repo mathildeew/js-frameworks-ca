@@ -2,7 +2,7 @@ import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
 
-export function ratings(rating) {
+export function Ratings(rating) {
   if (rating === 0) {
     return (
       <div className="rating">

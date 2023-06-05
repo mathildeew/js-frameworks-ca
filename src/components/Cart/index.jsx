@@ -11,7 +11,6 @@ export function Cart() {
   const dispatch = useDispatchCart();
 
   const itemsInCart = cartStorage.item;
-  console.log(itemsInCart);
   if (itemsInCart.length === 0) {
     return (
       <EmptyCart>

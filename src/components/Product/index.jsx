@@ -1,9 +1,12 @@
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useDispatchCart } from "../../context/Context";
 import { useApi } from "../../hooks/useApi";
+import { Loader } from "../ui/Loader";
+import { Error } from "../ui/Layout/Error";
 import { Link, useParams } from "react-router-dom";
 import { ProductContainer } from "./Product.styles";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
-import { ratings } from "../ui/Rating";
+import { Ratings } from "../ui/Rating";
 import { Reviews } from "../ui/Reviews";
 import { RatingContainer } from "../ui/Rating/Rating.styles";
 import {
@@ -13,9 +16,6 @@ import {
   DiscountContainer,
   ProductPrizing,
 } from "../ui/Prizing/Prizing.styles";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Loader } from "../ui/Loader";
-import { Error } from "../ui/Layout/Error";
 
 export function Product() {
   const dispatch = useDispatchCart();
@@ -63,11 +63,11 @@ export function Product() {
         </Helmet>
       </HelmetProvider>
 
-      <ProductContainer className="productContainer">
+      <ProductContainer>
         <img src={imageUrl} />
         <h1>{title}</h1>
         <RatingContainer>
-          {ratings(rating)}
+          {Ratings(rating)}
           {reviews?.length > 0 && <p>({reviews?.length} ratings)</p>}
         </RatingContainer>
 
@@ -90,7 +90,7 @@ export function Product() {
         </ProductPrizing>
         <BaseButton onClick={() => addToCart(products)}>Add to cart</BaseButton>
         <hr />
-        <Reviews results={reviews}></Reviews>
+        <Reviews data={reviews}></Reviews>
       </ProductContainer>
     </>
   );

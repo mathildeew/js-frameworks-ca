@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useApi } from "../../hooks/useApi";
 import { Loader } from "../ui/Loader";
+import { Error } from "../ui/Layout/Error/";
 import ProductsGrid from "./ProductsGrid";
 import { SearchInput } from "./Search/Search.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Error } from "../ui/Layout/Error/";
 
 export default function HomeContainer() {
   const { products, isLoading, isError } = useApi(
@@ -34,9 +34,6 @@ export default function HomeContainer() {
   return (
     <>
       <section>
-        <h1>Popular categories</h1>
-      </section>
-      <section>
         <h1>All products</h1>
 
         <SearchInput>
@@ -48,8 +45,8 @@ export default function HomeContainer() {
           />
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </SearchInput>
-        {!searchedProduct && <ProductsGrid results={products} />}
-        {searchedProduct && <ProductsGrid results={filteredProducts} />}
+        {!searchedProduct && <ProductsGrid data={products} />}
+        {searchedProduct && <ProductsGrid data={filteredProducts} />}
       </section>
     </>
   );

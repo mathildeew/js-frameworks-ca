@@ -1,3 +1,4 @@
+import { ProductsGridContainer } from "./ProductsGrid.styles";
 import { Link } from "react-router-dom";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import {
@@ -5,10 +6,9 @@ import {
   ProductsOldPrice,
   ProductsPrize,
 } from "../ui/Prizing/Prizing.styles";
-import { ProductsGridContainer } from "./ProductsGrid.styles";
 
-export default function ProductsGrid(results) {
-  const { results: products } = results;
+export default function ProductsGrid(data) {
+  const { data: products } = data;
   return (
     <ProductsGridContainer>
       {products.map((product) => (

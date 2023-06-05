@@ -31,6 +31,7 @@ main {
     min-height: 100vh;
     padding-left: 10px;
     padding-right: 10px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
