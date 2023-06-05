@@ -25,7 +25,6 @@ export default function HomeContainer() {
 
   return (
     <>
-      <Loader></Loader>
       <section>
         <h1>Popular categories</h1>
       </section>

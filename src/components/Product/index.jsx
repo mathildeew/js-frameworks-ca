@@ -14,6 +14,7 @@ import {
   ProductPrizing,
 } from "../ui/Prizing/Prizing.styles";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Loader } from "../ui/Loader";
 export function Product() {
   const dispatch = useDispatchCart();
 
@@ -39,7 +40,7 @@ export function Product() {
     dispatch({ type: "ADD", payload: products });
   };
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader></Loader>;
   if (isError) return <div>Something went wrong</div>;
 
   return (
@@ -55,39 +56,35 @@ export function Product() {
         </Helmet>
       </HelmetProvider>
 
-      <main>
-        <ProductContainer className="productContainer">
-          <img src={imageUrl} />
-          <h1>{title}</h1>
-          <RatingContainer>
-            {ratings(rating)}
-            {reviews?.length > 0 && <p>({reviews?.length} ratings)</p>}
-          </RatingContainer>
+      <ProductContainer className="productContainer">
+        <img src={imageUrl} />
+        <h1>{title}</h1>
+        <RatingContainer>
+          {ratings(rating)}
+          {reviews?.length > 0 && <p>({reviews?.length} ratings)</p>}
+        </RatingContainer>
 
-          <p>{description}</p>
-          <ProductPrizing>
-            {discountedPrice === price && <span>${price}</span>}
-            <DiscountContainer>
-              {discountedPrice < price && (
-                <ProductsDiscount>${discountedPrice}</ProductsDiscount>
-              )}
-              {discountedPrice < price && (
-                <ProductsPriceOff>
-                  ${price - discountedPrice} off!
-                </ProductsPriceOff>
-              )}
-            </DiscountContainer>
+        <p>{description}</p>
+        <ProductPrizing>
+          {discountedPrice === price && <span>${price}</span>}
+          <DiscountContainer>
             {discountedPrice < price && (
-              <ProductsOldPrice>${price}</ProductsOldPrice>
+              <ProductsDiscount>${discountedPrice}</ProductsDiscount>
             )}
-          </ProductPrizing>
-          <BaseButton onClick={() => addToCart(products)}>
-            Add to cart
-          </BaseButton>
-          <hr />
-          <Reviews results={reviews}></Reviews>
-        </ProductContainer>
-      </main>
+            {discountedPrice < price && (
+              <ProductsPriceOff>
+                ${price - discountedPrice} off!
+              </ProductsPriceOff>
+            )}
+          </DiscountContainer>
+          {discountedPrice < price && (
+            <ProductsOldPrice>${price}</ProductsOldPrice>
+          )}
+        </ProductPrizing>
+        <BaseButton onClick={() => addToCart(products)}>Add to cart</BaseButton>
+        <hr />
+        <Reviews results={reviews}></Reviews>
+      </ProductContainer>
     </>
   );
 }
