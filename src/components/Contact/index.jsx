@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FormContainer } from "./FormContainer.styles";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export function Contact() {
   const [name, setName] = useState("");
@@ -32,44 +33,56 @@ export function Contact() {
   }
 
   return (
-    <main>
-      <h1>Contact us</h1>
-      <FormContainer onSubmit={onFormSubmit}>
-        <label htmlFor="name">Your name</label>
-        <input
-          name="name"
-          minLength={3}
-          onChange={onTextInputChange}
-          required
-        />
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/src/assets/logo-sm.svg"
+          />
+          <title>Sjåpp - Contact us</title>
+        </Helmet>
+      </HelmetProvider>
+      <main>
+        <h1>Contact us</h1>
+        <FormContainer onSubmit={onFormSubmit}>
+          <label htmlFor="name">Your name</label>
+          <input
+            name="name"
+            minLength={3}
+            onChange={onTextInputChange}
+            required
+          />
 
-        <label htmlFor="email">Your email</label>
-        <input
-          name="email"
-          type="email"
-          onChange={onTextInputChange}
-          required
-        />
+          <label htmlFor="email">Your email</label>
+          <input
+            name="email"
+            type="email"
+            onChange={onTextInputChange}
+            required
+          />
 
-        <label htmlFor="subject">Subject</label>
-        <input
-          name="subject"
-          minLength={3}
-          onChange={onTextInputChange}
-          required
-        />
+          <label htmlFor="subject">Subject</label>
+          <input
+            name="subject"
+            minLength={3}
+            onChange={onTextInputChange}
+            required
+          />
 
-        <label htmlFor="message">Your message</label>
-        <textarea
-          name="message"
-          minLength={3}
-          rows="7"
-          onChange={onTextInputChange}
-          required
-        ></textarea>
+          <label htmlFor="message">Your message</label>
+          <textarea
+            name="message"
+            minLength={3}
+            rows="7"
+            onChange={onTextInputChange}
+            required
+          ></textarea>
 
-        <BaseButton>Send</BaseButton>
-      </FormContainer>
-    </main>
+          <BaseButton>Send</BaseButton>
+        </FormContainer>
+      </main>
+    </>
   );
 }
