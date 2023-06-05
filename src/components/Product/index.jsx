@@ -44,7 +44,6 @@ export function Product() {
 
   return (
     <>
-      {" "}
       <HelmetProvider>
         <Helmet>
           <link
@@ -52,9 +51,10 @@ export function Product() {
             type="image/svg+xml"
             href="/src/assets/logo-sm.svg"
           />
-          <title>Sjåpp - {products.title}</title>
+          <title>Sjåpp - </title>
         </Helmet>
       </HelmetProvider>
+
       <main>
         <ProductContainer className="productContainer">
           <img src={imageUrl} />

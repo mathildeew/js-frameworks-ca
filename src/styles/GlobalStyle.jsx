@@ -17,16 +17,21 @@ html {
 
 }
 body {
-    height: 100%;
+    min-height: 100vh;
+    height: 100vh;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     background: var(--color-white);
     font-family: Open Sans Variable, sans-serif;
+  
 }
 
 main {
     margin-left: 10px;
     margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1 {

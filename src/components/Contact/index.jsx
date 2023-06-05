@@ -44,6 +44,7 @@ export function Contact() {
           <title>Sjåpp - Contact us</title>
         </Helmet>
       </HelmetProvider>
+
       <main>
         <h1>Contact us</h1>
         <FormContainer onSubmit={onFormSubmit}>

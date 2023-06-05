@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useApi } from "../../hooks/useApi";
+import { Loader } from "../ui/Loader";
 import ProductsGrid from "./ProductsGrid";
 import { SearchInput } from "./Search/Search.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Loader } from "../ui/Loader";
 
 export default function HomeContainer() {
   const { products, isLoading, isError } = useApi(
@@ -24,7 +24,8 @@ export default function HomeContainer() {
   if (isError) return <div>Something went wrong</div>;
 
   return (
-    <main>
+    <>
+      <Loader></Loader>
       <section>
         <h1>Popular categories</h1>
       </section>
@@ -43,6 +44,6 @@ export default function HomeContainer() {
         {!searchedProduct && <ProductsGrid results={products} />}
         {searchedProduct && <ProductsGrid results={filteredProducts} />}
       </section>
-    </main>
+    </>
   );
 }

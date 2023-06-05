@@ -17,6 +17,7 @@ export function Checkout() {
           <title>Sjåpp - Checkout</title>
         </Helmet>
       </HelmetProvider>
+
       <main>
         <CheckoutContainer>
           <h1>Order complete!</h1>

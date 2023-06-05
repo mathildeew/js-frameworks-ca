@@ -13,8 +13,9 @@ export function Home() {
           />
           <title>Sjåpp - Online shop</title>
         </Helmet>
-        <HomeContainer />
       </HelmetProvider>
+
+      <HomeContainer />
     </>
   );
 }
