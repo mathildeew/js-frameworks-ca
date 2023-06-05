@@ -11,7 +11,7 @@ export const CartItemContainer = styled.div`
   }
 
   svg {
-    font-size: 2rem;
+    font-size: 2.3rem;
     color: var(--color-primary);
   }
 
@@ -35,10 +35,18 @@ export const DetailsRight = styled.div`
   justify-content: space-around;
 `;
 
-export const ItemDetails = styled.div``;
+export const ItemDetails = styled.div`
+  p:nth-child(2) {
+    font-size: 1.4rem;
+  }
+`;
 
 export const CartButtons = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  span {
+    font-size: 1.6rem;
+  }
 `;

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const CartContainer = styled.div`
+export const CartContainer = styled.section`
+  margin: 0 auto;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
 
@@ -16,7 +18,13 @@ export const TotalContainer = styled.div`
   margin-bottom: 50px;
 
   p {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 600;
+    margin-bottom: 40px;
   }
+`;
+
+export const EmptyCart = styled.section`
+  max-width: 450px;
+  margin: auto;
 `;

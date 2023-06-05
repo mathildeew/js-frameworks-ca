@@ -9,8 +9,7 @@ export const Loader = styled.span`
   background-color: var(--color-secondary);
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  margin: 0 auto;
-  margin-top: 50%;
+  margin-top: 20%;
 
   &:after {
     content: "";

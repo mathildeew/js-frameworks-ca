@@ -29,12 +29,11 @@ body {
 main {
     max-width: 850px;
     min-height: 100vh;
-    margin-left: 10px;
-    margin-right: 10px;
-
-    @media (min-width: 850px) {
-        margin: 0 auto;
-    }
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {

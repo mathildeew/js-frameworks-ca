@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useCart, useDispatchCart } from "../../context/Context";
-import { CartContainer, TotalContainer } from "./Cart.styled";
+import { CartContainer, EmptyCart, TotalContainer } from "./Cart.styled";
 import { CartItemContainer } from "./CartItem/CartItem.styled";
 import CartItem from "./CartItem";
 import { Link } from "react-router-dom";
@@ -14,13 +14,13 @@ export function Cart() {
   console.log(itemsInCart);
   if (itemsInCart.length === 0) {
     return (
-      <section>
+      <EmptyCart>
         <h1>Cart</h1>
         <p>
           Your cart is empty. Add something to the shopping cart to proceed to
           checkout.
         </p>
-      </section>
+      </EmptyCart>
     );
   }
 
@@ -37,8 +37,8 @@ export function Cart() {
         </Helmet>
       </HelmetProvider>
 
-      <h1>Your cart</h1>
       <CartContainer>
+        <h1>Your cart</h1>
         {itemsInCart.map((product) => (
           <CartItemContainer key={product.id}>
             <CartItem product={product}></CartItem>
@@ -46,10 +46,10 @@ export function Cart() {
         ))}
         <TotalContainer>
           <p>Total: $ {cartStorage.total}</p>
+          <BaseButton onClick={() => dispatch({ type: "CLEAR", payload: [] })}>
+            <Link to="/checkoutsuccess">Proceed to checkout</Link>
+          </BaseButton>
         </TotalContainer>
-        <BaseButton onClick={() => dispatch({ type: "CLEAR", payload: [] })}>
-          <Link to="/checkoutsuccess">Proceed to checkout</Link>
-        </BaseButton>
       </CartContainer>
     </>
   );

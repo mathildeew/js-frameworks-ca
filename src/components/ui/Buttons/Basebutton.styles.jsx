@@ -7,6 +7,7 @@ export const BaseButton = styled.button`
   text-transform: uppercase;
   background-color: var(--color-primary);
   border-style: none;
+  max-width: 200px;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-bottom: 20px;
