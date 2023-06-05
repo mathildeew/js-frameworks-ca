@@ -6,7 +6,7 @@ export const FooterContainer = styled.footer`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   font-family: Open Sans, sans-serif;
   padding: 12px;
 
@@ -21,4 +21,12 @@ export const FooterContainer = styled.footer`
   li:first-child {
     margin-bottom: 15px;
   }
+`;
+
+export const FooterContent = styled.div`
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;

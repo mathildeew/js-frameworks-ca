@@ -14,24 +14,27 @@ html {
     --color-white: #F7F5F8;
     --color-discount: #F85050;
     height: 100%;
-
 }
+
 body {
-    min-height: 100vh;
-    height: 100vh;
-    width: 100%;
-    margin: 0;
-    background: var(--color-white);
     font-family: Open Sans Variable, sans-serif;
-  
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    background: var(--color-white);
+    margin: 0;
+
 }
 
 main {
+    max-width: 850px;
+    min-height: 100vh;
     margin-left: 10px;
     margin-right: 10px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+
+    @media (min-width: 850px) {
+        margin: 0 auto;
+    }
 }
 
 h1 {

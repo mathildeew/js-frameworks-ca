@@ -4,15 +4,41 @@ export const HeaderContainer = styled.header`
   color: var(--color-primary);
   background-color: var(--color-primary);
   height: 50px;
-  margin-bottom: 50px;
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 50px;
+
   svg {
     height: 30px;
+  }
+
+  .logoLg {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .logoSm {
+      display: none;
+    }
+
+    .logoLg {
+      display: inline;
+      height: 40px;
+      padding-top: 2px;
+    }
   }
 `;
 
 export const HeaderContent = styled.div`
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const HeaderLeft = styled.div`
   height: 100%;
   width: 100%;
   display: flex;

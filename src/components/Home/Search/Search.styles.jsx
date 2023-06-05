@@ -34,4 +34,8 @@ export const SearchInput = styled.div`
     color: var(--color-primary);
     margin-right: 12px;
   }
+
+  @media (min-width: 480px) {
+    width: 300px;
+  }
 `;

@@ -3,6 +3,7 @@ import { useCart } from "../../../../context/Context";
 import {
   HeaderContainer,
   HeaderContent,
+  HeaderLeft,
   MenuIconContainer,
 } from "./Header.styles";
 import { Nav } from "./Nav";
@@ -26,20 +27,29 @@ export default function Header() {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Link to="/">
-          <img src="../../../../../public/images/logo-sm.svg" />
-        </Link>
-        <Link to="/cart">
-          <span className="fa-layers fa-fw fa-lg">
-            <FontAwesomeIcon icon={faBagShopping} />
-            <CartCounter />
-          </span>
-        </Link>
+        <HeaderLeft>
+          <Link to="/">
+            <img
+              src="../../../../../public/images/logo-sm.svg"
+              className="logoSm"
+            />
+            <img
+              src="../../../../../public/images/logo-lg.svg"
+              className="logoLg"
+            />
+          </Link>
+          <Link to="/cart">
+            <span className="fa-layers fa-fw fa-lg">
+              <FontAwesomeIcon icon={faBagShopping} />
+              <CartCounter />
+            </span>
+          </Link>
+        </HeaderLeft>
+        <MenuIconContainer>
+          <FontAwesomeIcon icon={faBars} onClick={onShowMenu} />
+        </MenuIconContainer>
+        {showMenu ? <Nav /> : true}
       </HeaderContent>
-      <MenuIconContainer>
-        <FontAwesomeIcon icon={faBars} onClick={onShowMenu} />
-      </MenuIconContainer>
-      {showMenu ? <Nav /> : true}
     </HeaderContainer>
   );
 }
