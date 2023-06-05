@@ -5,9 +5,11 @@ export const NavContainer = styled.nav`
   font-family: Open Sans, sans-serif;
   display: flex;
   justify-content: flex-end;
-  height: 50vh;
+  height: 100%;
   position: absolute;
-  width: 100%;
+  width: 75%;
+  top: 50px;
+  right: 0;
 
   ul {
     padding: 0;
