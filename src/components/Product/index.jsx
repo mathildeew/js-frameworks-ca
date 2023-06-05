@@ -1,6 +1,6 @@
 import { useDispatchCart } from "../../context/Context";
 import { useApi } from "../../hooks/useApi";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ProductContainer } from "./Product.styles";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { ratings } from "../ui/Rating";
@@ -15,6 +15,8 @@ import {
 } from "../ui/Prizing/Prizing.styles";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Loader } from "../ui/Loader";
+import { Error } from "../ui/Layout/Error";
+
 export function Product() {
   const dispatch = useDispatchCart();
 
@@ -41,7 +43,12 @@ export function Product() {
   };
 
   if (isLoading) return <Loader></Loader>;
-  if (isError) return <div>Something went wrong</div>;
+  if (isError)
+    <Error>
+      <img src="../../../src/assets/error.png" />
+      <p>There was en error with the site.</p>
+      <Link to="/">Try again</Link>
+    </Error>;
 
   return (
     <>

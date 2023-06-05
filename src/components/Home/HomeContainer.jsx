@@ -5,6 +5,7 @@ import ProductsGrid from "./ProductsGrid";
 import { SearchInput } from "./Search/Search.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Error } from "../ui/Layout/Error/";
 
 export default function HomeContainer() {
   const { products, isLoading, isError } = useApi(
@@ -21,7 +22,14 @@ export default function HomeContainer() {
   );
 
   if (isLoading) return <Loader></Loader>;
-  if (isError) return <div>Something went wrong</div>;
+  if (isError)
+    return (
+      <Error>
+        <img src="../../../src/assets/error.png" />
+        <p>There was en error with the site.</p>
+        <Link to="/">Try again</Link>
+      </Error>
+    );
 
   return (
     <>
