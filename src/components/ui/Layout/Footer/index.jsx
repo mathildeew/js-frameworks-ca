@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <FooterContainer>
       <Link to="/">
-        <img src="../../../../../src/assets/logo-lg.svg" />
+        <img src="../../../../../public/images/logo-lg.svg" />
       </Link>
       <ul>
         <li>

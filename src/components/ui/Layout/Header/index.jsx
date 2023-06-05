@@ -27,7 +27,7 @@ export default function Header() {
     <HeaderContainer>
       <HeaderContent>
         <Link to="/">
-          <img src="../../../../../src/assets/logo-sm.svg" />
+          <img src="../../../../../public/images/logo-sm.svg" />
         </Link>
         <Link to="/cart">
           <span className="fa-layers fa-fw fa-lg">

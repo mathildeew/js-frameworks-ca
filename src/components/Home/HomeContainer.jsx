@@ -25,7 +25,7 @@ export default function HomeContainer() {
   if (isError)
     return (
       <Error>
-        <img src="../../../src/assets/error.png" />
+        <img src="../../../public/images/error.png" />
         <p>There was en error with the site.</p>
         <Link to="/">Try again</Link>
       </Error>
