@@ -6,6 +6,7 @@ import ProductsGrid from "./ProductsGrid";
 import { SearchInput } from "./Search/Search.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function HomeContainer() {
   const { products, isLoading, isError } = useApi(
@@ -20,6 +21,10 @@ export default function HomeContainer() {
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchedProduct.toLowerCase())
   );
+
+  // const electronicFilter = products.filter((product) =>
+  //   product.tags.includes("electronics")
+  // );
 
   if (isLoading) return <Loader></Loader>;
   if (isError)
