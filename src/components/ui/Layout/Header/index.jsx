@@ -12,17 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping, faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-  const [showMenu, setShowMenu] = useState(false);
-
-  function onShowMenu() {
-    setShowMenu(!showMenu);
-  }
-
-  function CartCounter() {
-    const cartStorage = useCart() || [];
-
-    return <span className="fa-layers-counter">{cartStorage.qty}</span>;
-  }
+  const cartStorage = useCart() || [];
 
   return (
     <HeaderContainer>
@@ -41,14 +31,11 @@ export default function Header() {
           <Link to="/cart">
             <span className="fa-layers fa-fw fa-lg">
               <FontAwesomeIcon icon={faBagShopping} />
-              <CartCounter />
+              <span className="fa-layers-counter">{cartStorage.qty}</span>;
             </span>
           </Link>
         </HeaderLeft>
-        <MenuIconContainer>
-          <FontAwesomeIcon icon={faBars} onClick={onShowMenu} />
-        </MenuIconContainer>
-        {showMenu ? <Nav /> : true}
+        <Nav />
       </HeaderContent>
     </HeaderContainer>
   );
