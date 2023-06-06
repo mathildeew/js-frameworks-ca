@@ -1,15 +1,9 @@
-import { useState } from "react";
 import { useCart } from "../../../../context/Context";
-import {
-  HeaderContainer,
-  HeaderContent,
-  HeaderLeft,
-  MenuIconContainer,
-} from "./Header.styles";
+import { HeaderContainer, HeaderContent, HeaderLeft } from "./Header.styles";
 import { Nav } from "./Nav";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBagShopping, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const cartStorage = useCart() || [];

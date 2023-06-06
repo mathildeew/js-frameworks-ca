@@ -1,9 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MenuIconContainer } from "./Header.styles";
-import { NavContainer } from "./Nav.styles";
+import { MenuIconContainer, NavContainer } from "./Nav.styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export function Nav() {
   const [showMenu, setShowMenu] = useState(false);

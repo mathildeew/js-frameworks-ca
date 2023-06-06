@@ -5,9 +5,9 @@ export const NavContainer = styled.nav`
   font-family: Open Sans, sans-serif;
   display: flex;
   justify-content: flex-end;
-  height: 100%;
+  height: 100vh;
   position: absolute;
-  width: 75%;
+  width: 220px;
   top: 50px;
   right: 0px;
   transition: all 0.4s ease;
@@ -15,7 +15,7 @@ export const NavContainer = styled.nav`
 
   ul {
     padding: 0;
-    margin-top: 15px;
+    margin-top: 30px;
     padding-right: 12px;
   }
   li {
@@ -24,6 +24,7 @@ export const NavContainer = styled.nav`
 
   a {
     color: var(--color-primary);
+    font-weight: 900;
   }
 
   &.inactive {
@@ -36,5 +37,19 @@ export const NavContainer = styled.nav`
     opacity: 1;
     visibility: visible;
     transition: all 0.4s ease;
+  }
+`;
+
+export const MenuIconContainer = styled.div`
+  background: var(--color-secondary);
+  height: 100%;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  svg {
+    color: var(--color-primary);
   }
 `;

@@ -9,6 +9,10 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   margin-bottom: 50px;
 
+  span .fa-fw {
+    height: fit-content;
+  }
+
   svg {
     height: 30px;
   }
@@ -36,6 +40,7 @@ export const HeaderContent = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const HeaderLeft = styled.div`
@@ -46,27 +51,13 @@ export const HeaderLeft = styled.div`
   justify-content: space-between;
   padding-right: 25px;
   padding-left: 25px;
-  z-index: 1000;
-  position: relative;
+
   .fa-layers-counter {
     color: var(--color-primary);
     font-size: 40px;
     font-weight: 600;
     background: var(--color-secondary);
-    margin-top: 10px;
+    margin-top: 5px;
     margin-right: -10px;
-  }
-`;
-
-export const MenuIconContainer = styled.div`
-  background: var(--color-secondary);
-  height: 100%;
-  width: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    color: var(--color-primary);
   }
 `;
