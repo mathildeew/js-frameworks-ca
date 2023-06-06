@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { useReducer } from "react";
-import { reducer } from "./reducer";
 import { useContext } from "react";
+import { reducer } from "./reducer";
 
 const CartStateContext = createContext();
 const CartDispatchContext = createContext();

@@ -38,12 +38,11 @@ export function Product() {
     title,
   } = products;
 
-  const priceDiff = price - discountedPrice;
-
   const addToCart = (products) => {
     dispatch({ type: "ADD", payload: products });
   };
 
+  const priceDiff = price - discountedPrice;
   const percentage = (priceDiff / price) * 100;
   const percentageOff = Number(percentage.toFixed(0));
 
@@ -70,7 +69,7 @@ export function Product() {
 
       <ProductContainer>
         <img src={imageUrl} />
-        {discountedPrice > price && (
+        {discountedPrice < price && (
           <div className="percentageContainer">
             <span>- {percentageOff}%</span>
           </div>

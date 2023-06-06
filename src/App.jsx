@@ -1,6 +1,5 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/ui/Layout";
-
 import { Home } from "./components/Home/index";
 import { Product } from "./components/Product/index";
 import { Cart } from "./components/Cart";

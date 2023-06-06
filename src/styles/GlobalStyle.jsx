@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 
 * {
     margin: 0;
@@ -19,10 +19,10 @@ html {
 
 body {
     font-family: Open Sans Variable, sans-serif;
+    background: var(--color-white);
     width: 100%;
     height: 100vh;
     min-height: 100vh;
-    background: var(--color-white);
     margin: 0;
 }
 
@@ -59,10 +59,7 @@ li {
 }
 
 hr {
-   
    border-color: var(--color-primary);
 }
 
 `;
-
-export default GlobalStyle;

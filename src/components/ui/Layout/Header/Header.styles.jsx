@@ -9,10 +9,6 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   margin-bottom: 50px;
 
-  span .fa-fw {
-    height: fit-content;
-  }
-
   svg {
     height: 30px;
   }
@@ -51,6 +47,10 @@ export const HeaderLeft = styled.div`
   justify-content: space-between;
   padding-right: 25px;
   padding-left: 25px;
+
+  .fa-layers {
+    bottom: 4px;
+  }
 
   .fa-layers-counter {
     color: var(--color-primary);

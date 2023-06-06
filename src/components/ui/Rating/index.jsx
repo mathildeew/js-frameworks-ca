@@ -1,16 +1,16 @@
-import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
+import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import { faStar as emptyStar } from "@fortawesome/free-regular-svg-icons";
 
 export function Ratings(rating) {
   if (rating === 0) {
     return (
       <div className="rating">
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
         <p>(No ratings yet)</p>
       </div>
     );
@@ -19,11 +19,10 @@ export function Ratings(rating) {
   if (rating >= 0.5 && rating < 1) {
     return (
       <div className="rating">
-        <FontAwesomeIcon icon={faStarHalf} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
       </div>
     );
   }
@@ -32,10 +31,10 @@ export function Ratings(rating) {
     return (
       <div className="rating">
         <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
       </div>
     );
   }
@@ -45,9 +44,9 @@ export function Ratings(rating) {
       <div className="rating">
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStarHalfAlt} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
       </div>
     );
   }
@@ -57,9 +56,9 @@ export function Ratings(rating) {
       <div className="rating">
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
       </div>
     );
   }
@@ -70,8 +69,8 @@ export function Ratings(rating) {
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStarHalfAlt} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
       </div>
     );
   }
@@ -82,8 +81,8 @@ export function Ratings(rating) {
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={farStar} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} />
       </div>
     );
   }
@@ -95,7 +94,7 @@ export function Ratings(rating) {
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStarHalfAlt} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
       </div>
     );
   }
@@ -107,7 +106,7 @@ export function Ratings(rating) {
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={farStar} />
+        <FontAwesomeIcon icon={emptyStar} />
       </div>
     );
   }
