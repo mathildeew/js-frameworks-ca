@@ -11,6 +11,7 @@ export const NavContainer = styled.nav`
   top: 50px;
   right: 0px;
   transition: all 0.4s ease;
+  overflow: hidden;
 
   ul {
     padding: 0;
@@ -28,14 +29,12 @@ export const NavContainer = styled.nav`
   &.inactive {
     opacity: 0;
     visibility: hidden;
-    left: 600px;
     transition: all 0.4s ease;
   }
 
   &.active {
     opacity: 1;
     visibility: visible;
-    right: 0;
     transition: all 0.4s ease;
   }
 `;

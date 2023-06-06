@@ -46,7 +46,8 @@ export const HeaderLeft = styled.div`
   justify-content: space-between;
   padding-right: 25px;
   padding-left: 25px;
-
+  z-index: 1000;
+  position: relative;
   .fa-layers-counter {
     color: var(--color-primary);
     font-size: 40px;

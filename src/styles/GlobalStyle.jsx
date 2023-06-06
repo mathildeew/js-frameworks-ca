@@ -23,8 +23,8 @@ body {
     min-height: 100vh;
     background: var(--color-white);
     margin: 0;
-
 }
+
 
 main {
     max-width: 850px;
