@@ -36,6 +36,25 @@ export const ProductContainer = styled.section`
     }
   }
 
+  .tagContainer {
+    display: flex;
+    align-items: center;
+    border: 2px solid green;
+    margin-bottom: 20px;
+
+    svg {
+      margin-right: 8px;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    p:nth-child(2) {
+      margin-right: 5px;
+    }
+  }
+
   @media (min-width: 500px) {
     img {
       height: 450px;

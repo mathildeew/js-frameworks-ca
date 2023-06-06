@@ -16,6 +16,8 @@ import {
   DiscountContainer,
   ProductPrizing,
 } from "../ui/Prizing/Prizing.styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHashtag } from "@fortawesome/free-solid-svg-icons";
 
 export function Product() {
   const dispatch = useDispatchCart();
@@ -37,6 +39,8 @@ export function Product() {
     tags,
     title,
   } = products;
+
+  console.log(products);
 
   const addToCart = (products) => {
     dispatch({ type: "ADD", payload: products });
@@ -79,6 +83,13 @@ export function Product() {
           {Ratings(rating)}
           {reviews?.length > 0 && <p>({reviews?.length} ratings)</p>}
         </RatingContainer>
+
+        <div className="tagContainer">
+          <FontAwesomeIcon icon={faHashtag} />
+          {tags?.map((tag) => (
+            <p key={tag}> {tag}, </p>
+          ))}
+        </div>
 
         <p>{description}</p>
         <ProductPrizing>
