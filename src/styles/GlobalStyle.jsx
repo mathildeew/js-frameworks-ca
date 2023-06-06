@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
 
 html {
     --color-primary: #37404E;
-    --color-secondary: #FCC0D4;
+    --color-secondary: #fcc0d4;
+    --color-secondary04: rgba(252, 192, 212, 0.6);
     --color-black: #000;
     --color-white: #F7F5F8;
     --color-discount: #F85050;

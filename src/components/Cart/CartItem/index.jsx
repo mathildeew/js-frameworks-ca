@@ -19,7 +19,7 @@ export default function CartItem({ product }) {
         <DetailsRight>
           <ItemDetails>
             <h2>{product.title}</h2>
-            <p>$ {product.price}</p>
+            <p>$ {product.discountedPrice}</p>
           </ItemDetails>
           <CartButtons>
             <RoundButton

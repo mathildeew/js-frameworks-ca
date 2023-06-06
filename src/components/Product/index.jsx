@@ -38,9 +38,14 @@ export function Product() {
     title,
   } = products;
 
+  const priceDiff = price - discountedPrice;
+
   const addToCart = (products) => {
     dispatch({ type: "ADD", payload: products });
   };
+
+  const percentage = (priceDiff / price) * 100;
+  const percentageOff = Number(percentage.toFixed(0));
 
   if (isLoading) return <Loader></Loader>;
   if (isError)
@@ -65,6 +70,11 @@ export function Product() {
 
       <ProductContainer>
         <img src={imageUrl} />
+        {discountedPrice > price && (
+          <div className="percentageContainer">
+            <span>- {percentageOff}%</span>
+          </div>
+        )}
         <h1>{title}</h1>
         <RatingContainer>
           {Ratings(rating)}
@@ -78,19 +88,14 @@ export function Product() {
             {discountedPrice < price && (
               <ProductsDiscount>${discountedPrice}</ProductsDiscount>
             )}
-            {discountedPrice < price && (
-              <ProductsPriceOff>
-                ${price - discountedPrice} off!
-              </ProductsPriceOff>
-            )}
           </DiscountContainer>
           {discountedPrice < price && (
             <ProductsOldPrice>${price}</ProductsOldPrice>
           )}
         </ProductPrizing>
         <BaseButton onClick={() => addToCart(products)}>Add to cart</BaseButton>
-        <hr />
-        <Reviews data={reviews}></Reviews>
+
+        {reviews?.length > 0 && <Reviews data={reviews}></Reviews>}
       </ProductContainer>
     </>
   );

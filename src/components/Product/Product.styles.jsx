@@ -7,7 +7,7 @@ export const ProductContainer = styled.section`
   margin: 0 auto;
 
   img {
-    height: 280px;
+    height: 300px;
     width: 100%;
     object-fit: cover;
     object-position: center center;
@@ -19,5 +19,26 @@ export const ProductContainer = styled.section`
 
   hr {
     margin-bottom: 30px;
+  }
+
+  .percentageContainer {
+    position: relative;
+
+    span {
+      color: var(--color-primary);
+      font-size: 1.8rem;
+      font-weight: 600;
+      background-color: var(--color-secondary04);
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px;
+    }
+  }
+
+  @media (min-width: 500px) {
+    img {
+      height: 450px;
+    }
   }
 `;
