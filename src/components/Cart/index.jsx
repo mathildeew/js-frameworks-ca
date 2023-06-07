@@ -1,8 +1,7 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useCart, useDispatchCart } from "../../context/Context";
-import { CartContainer, EmptyCart, TotalContainer } from "./Cart.styled";
-import { CartItemContainer } from "./CartItem/CartItem.styled";
-import CartItem from "./CartItem";
+import { CartContainer, EmptyCart } from "./Cart.styled";
+import { CartItem } from "./CartItem/index";
 import { Link } from "react-router-dom";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 
@@ -12,14 +11,32 @@ export function Cart() {
 
   const itemsInCart = cartStorage.item;
   if (itemsInCart.length === 0) {
+    console.log(itemsInCart.length);
+
     return (
-      <EmptyCart>
-        <h1>Cart</h1>
-        <p>
-          Your cart is empty. Add something to the shopping cart to proceed to
-          checkout.
-        </p>
-      </EmptyCart>
+      <>
+        <HelmetProvider>
+          <Helmet>
+            <link
+              rel="icon"
+              type="image/svg+xml"
+              href="/src/assets/logo-sm.svg"
+            />
+            <title>Sjåpp - Cart - {`(0) items`}</title>
+          </Helmet>
+        </HelmetProvider>
+
+        <EmptyCart>
+          <h1>Cart</h1>
+          <p>
+            Your cart is empty. Add something to the shopping cart to proceed to
+            checkout.
+          </p>
+          <BaseButton>
+            <Link to="/">Go shopping</Link>
+          </BaseButton>
+        </EmptyCart>
+      </>
     );
   }
 
@@ -32,23 +49,26 @@ export function Cart() {
             type="image/svg+xml"
             href="/src/assets/logo-sm.svg"
           />
-          <title>Sjåpp - Cart</title>
+          <title>Sjåpp - Cart {`(${itemsInCart.length} items)`}</title>
         </Helmet>
       </HelmetProvider>
 
       <CartContainer>
         <h1>Your cart</h1>
+
         {itemsInCart.map((product) => (
-          <CartItemContainer key={product.id}>
+          <>
             <CartItem product={product}></CartItem>
-          </CartItemContainer>
+            <hr />
+          </>
         ))}
-        <TotalContainer>
+
+        <div className="totalContainer">
           <p>Total: $ {cartStorage.total}</p>
           <BaseButton onClick={() => dispatch({ type: "CLEAR", payload: [] })}>
             <Link to="/checkoutsuccess">Proceed to checkout</Link>
           </BaseButton>
-        </TotalContainer>
+        </div>
       </CartContainer>
     </>
   );

@@ -18,7 +18,7 @@ export const BaseButton = styled.button`
   border: ${(props) => (props.isWhite ? "2px solid var(--color-primary)" : "")};
 
   a {
-    color: var(--color-primary);
+    color: var(--color-white);
     color: ${(props) => (props.isWhite ? "var(--color-primary)" : "")};
   }
 
