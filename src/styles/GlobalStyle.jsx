@@ -52,6 +52,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+p {
+    font-size: 1.6rem;
+}
+
 a {
     color: var(--color-white);
     text-decoration: none;

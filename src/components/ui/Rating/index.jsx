@@ -11,7 +11,6 @@ export function Ratings(rating) {
         <FontAwesomeIcon icon={emptyStar} />
         <FontAwesomeIcon icon={emptyStar} />
         <FontAwesomeIcon icon={emptyStar} />
-        <p>(No ratings yet)</p>
       </div>
     );
   }

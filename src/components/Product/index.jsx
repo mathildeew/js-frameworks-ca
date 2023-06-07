@@ -7,15 +7,6 @@ import { Link, useParams } from "react-router-dom";
 import { ProductContainer } from "./Product.styles";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { Ratings } from "../ui/Rating";
-import { Reviews } from "../ui/Reviews";
-import { RatingContainer } from "../ui/Rating/Rating.styles";
-import {
-  ProductsDiscount,
-  ProductsOldPrice,
-  ProductsPriceOff,
-  DiscountContainer,
-  ProductPrizing,
-} from "../ui/Prizing/Prizing.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHashtag } from "@fortawesome/free-solid-svg-icons";
 
@@ -79,10 +70,25 @@ export function Product() {
           </div>
         )}
         <h1>{title}</h1>
-        <RatingContainer>
+
+        <div className="ratingContainer">
           {Ratings(rating)}
-          {reviews?.length > 0 && <p>({reviews?.length} ratings)</p>}
-        </RatingContainer>
+          <span>({reviews?.length} ratings)</span>
+        </div>
+
+        <div className="productPricing">
+          {discountedPrice === price && (
+            <span className="orgPrice">${price}</span>
+          )}
+          {discountedPrice < price && (
+            <>
+              <span className="newPrice">${discountedPrice}</span>
+              <span className="oldPrice">${price}</span>
+            </>
+          )}
+        </div>
+
+        <p>{description}</p>
 
         <div className="tagContainer">
           <FontAwesomeIcon icon={faHashtag} />
@@ -91,21 +97,21 @@ export function Product() {
           ))}
         </div>
 
-        <p>{description}</p>
-        <ProductPrizing>
-          {discountedPrice === price && <span>${price}</span>}
-          <DiscountContainer>
-            {discountedPrice < price && (
-              <ProductsDiscount>${discountedPrice}</ProductsDiscount>
-            )}
-          </DiscountContainer>
-          {discountedPrice < price && (
-            <ProductsOldPrice>${price}</ProductsOldPrice>
-          )}
-        </ProductPrizing>
         <BaseButton onClick={() => addToCart(products)}>Add to cart</BaseButton>
 
-        {reviews?.length > 0 && <Reviews data={reviews}></Reviews>}
+        {reviews?.length > 0 && (
+          <section>
+            <hr />
+            <h2>Reviews</h2>
+            {reviews?.map((review) => (
+              <div key={review.id} className="reviewsContainer">
+                <div className="ratingContainer">{Ratings(rating)}</div>
+                <h2>{review.username}</h2>
+                <p>{review.description}</p>
+              </div>
+            ))}
+          </section>
+        )}
       </ProductContainer>
     </>
   );

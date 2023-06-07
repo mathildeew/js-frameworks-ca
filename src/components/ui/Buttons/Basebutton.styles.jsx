@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BaseButton = styled.button`
   color: var(--color-white);
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   text-transform: uppercase;
   background-color: var(--color-primary);
@@ -20,5 +20,11 @@ export const BaseButton = styled.button`
   a {
     color: var(--color-primary);
     color: ${(props) => (props.isWhite ? "var(--color-primary)" : "")};
+  }
+
+  @media (min-width: 500px) {
+    font-size: 1.6rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 `;
