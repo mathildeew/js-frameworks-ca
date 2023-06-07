@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const CheckoutContainer = styled.div`
+export const CheckoutContainer = styled.section`
   max-width: 450px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 2px solid var(--color-primary);
+  margin: 0 auto;
   margin-bottom: 50px;
   padding: 15px;
 
@@ -22,6 +22,7 @@ export const CheckoutContainer = styled.div`
 
   a {
     color: var(--color-primary);
+    font-size: 1.6rem;
     font-weight: 600;
     text-decoration: underline;
   }
