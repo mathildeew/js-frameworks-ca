@@ -6,12 +6,14 @@ export const BaseButton = styled.button`
   font-weight: 600;
   text-transform: uppercase;
   background-color: var(--color-primary);
+  border-radius: 4px;
   border-style: none;
   max-width: 200px;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-bottom: 20px;
 
+  color: ${(props) => (props.isWhite ? "var(--color-primary)" : "")};
   background-color: ${(props) => (props.isWhite ? "var(--color-white)" : "")};
   border: ${(props) => (props.isWhite ? "2px solid var(--color-primary)" : "")};
 

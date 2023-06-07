@@ -15,6 +15,8 @@ html {
     --color-white: #F7F5F8;
     --color-discount: #F85050;
     height: 100%;
+    font-size: 62.5%;
+
 }
 
 body {
@@ -39,12 +41,13 @@ main {
 }
 
 h1 {
+    font-size: 2.5rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 h2 {
-    font-size: 14px;
+    font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
