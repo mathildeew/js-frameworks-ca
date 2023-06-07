@@ -58,7 +58,7 @@ export function Product() {
             type="image/svg+xml"
             href="/src/assets/logo-sm.svg"
           />
-          <title>Sjåpp - </title>
+          <title>Sjåpp - {`${title}`}</title>
         </Helmet>
       </HelmetProvider>
 
