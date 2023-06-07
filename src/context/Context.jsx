@@ -6,7 +6,7 @@ import { reducer } from "./reducer";
 const CartStateContext = createContext();
 const CartDispatchContext = createContext();
 
-export default function CartProvider({ children }) {
+export function CartProvider({ children }) {
   const initialState = { item: [], total: 0, qty: 0 };
   const [state, dispatch] = useReducer(reducer, initialState);
 

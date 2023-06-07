@@ -1,7 +1,7 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useDispatchCart } from "../../context/Context";
-import { useApi } from "../../hooks/useApi";
-import { Loader } from "../ui/Loader";
+import useApi from "../../hooks/useApi";
+import Loader from "../ui/Loader";
 import { Error } from "../ui/Layout/Error";
 import { Link, useParams } from "react-router-dom";
 import { ProductContainer } from "./Product.styles";
@@ -10,7 +10,7 @@ import { Ratings } from "../ui/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHashtag } from "@fortawesome/free-solid-svg-icons";
 
-export function Product() {
+export default function Product() {
   const dispatch = useDispatchCart();
 
   let { id } = useParams();

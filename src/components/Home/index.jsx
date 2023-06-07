@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { useApi } from "../../hooks/useApi";
+import useApi from "../../hooks/useApi";
 import { HomeContainer } from "./HomeContainer.styles";
-import { Products } from "./Products";
+import Products from "./Products";
 import { SearchInput } from "./Search/Search.styles";
-import { Loader } from "../ui/Loader";
+import Loader from "../ui/Loader";
 import { Error } from "../ui/Layout/Error";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-export function Home() {
+export default function Home() {
   const { products, isLoading, isError } = useApi(
     "https://api.noroff.dev/api/v1/online-shop"
   );

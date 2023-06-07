@@ -1,6 +1,6 @@
 import { LoaderContainer } from "./Loader.styles";
 
-export function Loader() {
+export default function Loader() {
   return (
     <LoaderContainer>
       <span></span>

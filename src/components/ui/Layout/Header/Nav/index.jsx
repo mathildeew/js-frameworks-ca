@@ -4,7 +4,7 @@ import { NavContainer } from "./Nav.styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-export function Nav() {
+export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (

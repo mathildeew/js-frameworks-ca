@@ -4,7 +4,7 @@ import { FormContainer } from "./FormContainer.styles";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-export function Contact() {
+export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");

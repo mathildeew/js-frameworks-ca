@@ -1,12 +1,12 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useCart, useDispatchCart } from "../../context/Context";
 import { CartContainer, EmptyCart } from "./Cart.styled";
-import { CartItem } from "./CartItem/index";
+import CartItem from "./CartItem/index";
 import { Link } from "react-router-dom";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { CartItemContainer } from "./CartItem/CartItem.styled";
 
-export function Cart() {
+export default function Cart() {
   const cartStorage = useCart();
   const dispatch = useDispatchCart();
 

@@ -2,7 +2,7 @@ import { ProductsContainer } from "./Products.styles";
 import { Link } from "react-router-dom";
 import { BaseButton } from "../../ui/Buttons/Basebutton.styles";
 
-export function Products(data) {
+export default function Products(data) {
   const { data: products } = data;
 
   return (

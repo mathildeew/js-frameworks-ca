@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useApi(url) {
+export default function useApi(url) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);

@@ -3,7 +3,7 @@ import { RoundButton } from "../../ui/Buttons/RoundButton";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export function CartItem({ product }) {
+export default function CartItem({ product }) {
   const dispatch = useDispatchCart();
 
   return (

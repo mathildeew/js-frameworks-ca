@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import { Layout } from "./components/ui/Layout";
-import { Home } from "./components/Home/index";
-import { Product } from "./components/Product/index";
-import { Cart } from "./components/Cart";
-import { Checkout } from "./components/Checkout";
-import { Contact } from "./components/Contact";
-import { NotFound } from "./components/Notfound";
+import Layout from "./components/ui/Layout";
+import Home from "./components/Home";
+import Product from "./components/Product/index";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import Contact from "./components/Contact";
+import NotFound from "./components/Notfound";
 
 export default function App() {
   return (
