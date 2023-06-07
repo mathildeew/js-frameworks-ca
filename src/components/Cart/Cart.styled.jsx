@@ -16,8 +16,12 @@ export const CartContainer = styled.section`
   }
 
   .totalContainer {
-    margin-top: 30px;
     margin-bottom: 50px;
+    ${displayFlex({
+      direction: "column",
+      align: "flex-end",
+      justify: "unset",
+    })}
 
     p {
       font-size: 2rem;

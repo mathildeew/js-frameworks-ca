@@ -40,11 +40,6 @@ export default function Product() {
       <>
         <HelmetProvider>
           <Helmet>
-            <link
-              rel="icon"
-              type="image/svg+xml"
-              href="/src/assets/logo-sm.svg"
-            />
             <title>Sjåpp</title>
           </Helmet>
         </HelmetProvider>
@@ -54,21 +49,26 @@ export default function Product() {
     );
 
   if (isError)
-    <Error>
-      <img src="../../../src/assets/error.png" />
-      <p>There was en error with the site.</p>
-      <Link to="/">Try again</Link>
-    </Error>;
+    return (
+      <>
+        <HelmetProvider>
+          <Helmet>
+            <title>Sjåpp - Error!</title>
+          </Helmet>
+        </HelmetProvider>
+
+        <Error>
+          <img src="/images/error.png" />
+          <p>There was en error with the site.</p>
+          <Link to="/">Try again</Link>
+        </Error>
+      </>
+    );
 
   return (
     <>
       <HelmetProvider>
         <Helmet>
-          <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/src/assets/logo-sm.svg"
-          />
           <title>Sjåpp - {`${title}`}</title>
         </Helmet>
       </HelmetProvider>

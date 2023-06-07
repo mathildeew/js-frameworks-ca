@@ -23,37 +23,33 @@ export default function Home() {
     setSearchedProduct(event.target.value);
   }
 
-  if (isLoading) return;
-  <>
-    <HelmetProvider>
-      <Helmet>
-        <link rel="icon" type="image/svg+xml" href="/src/assets/logo-sm.svg" />
-        <title>Sjåpp</title>
-      </Helmet>
-    </HelmetProvider>
+  if (isLoading)
+    return (
+      <>
+        <HelmetProvider>
+          <Helmet>
+            <title>Sjåpp - Loading</title>
+          </Helmet>
+        </HelmetProvider>
 
-    <HomeContainer>
-      <Loader />
-    </HomeContainer>
-  </>;
+        <HomeContainer>
+          <Loader />
+        </HomeContainer>
+      </>
+    );
 
   if (isError)
     return (
       <>
         <HelmetProvider>
           <Helmet>
-            <link
-              rel="icon"
-              type="image/svg+xml"
-              href="/src/assets/logo-sm.svg"
-            />
-            <title>Sjåpp - Online shop</title>
+            <title>Sjåpp - Error!</title>
           </Helmet>
         </HelmetProvider>
 
         <HomeContainer>
           <Error>
-            <img src="../../../public/images/error.png" />
+            <img src="/images/error.png" />
             <p>There was en error with the site.</p>
             <Link to="/">Try again</Link>
           </Error>
@@ -65,11 +61,6 @@ export default function Home() {
     <>
       <HelmetProvider>
         <Helmet>
-          <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/src/assets/logo-sm.svg"
-          />
           <title>Sjåpp - Online shop</title>
         </Helmet>
       </HelmetProvider>

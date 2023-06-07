@@ -9,11 +9,6 @@ export default function Checkout() {
     <>
       <HelmetProvider>
         <Helmet>
-          <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/src/assets/logo-sm.svg"
-          />
           <title>Sjåpp - Checkout</title>
         </Helmet>
       </HelmetProvider>

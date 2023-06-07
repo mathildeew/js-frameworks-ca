@@ -5,7 +5,6 @@ export const CartItemContainer = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 20px;
-  margin-bottom: 20px;
   ${displayFlex({ direction: "column", align: "unset", justify: "unset" })}
 
   .cartItem {

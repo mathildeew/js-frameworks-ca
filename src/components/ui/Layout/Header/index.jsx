@@ -13,14 +13,8 @@ export default function Header() {
       <div className="headerContent">
         <div className="headerLeft">
           <Link to="/">
-            <img
-              src="../../../../../public/images/logo-sm.svg"
-              className="logoSm"
-            />
-            <img
-              src="../../../../../public/images/logo-lg.svg"
-              className="logoLg"
-            />
+            <img src="/images/logo-sm.svg" className="logoSm" />
+            <img src="/images/logo-lg.svg" className="logoLg" />
           </Link>
           <Link to="/cart">
             <span className="fa-layers fa-fw fa-lg">

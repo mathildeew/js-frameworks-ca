@@ -37,11 +37,6 @@ export default function Contact() {
     <>
       <HelmetProvider>
         <Helmet>
-          <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/src/assets/logo-sm.svg"
-          />
           <title>Sjåpp - Contact us</title>
         </Helmet>
       </HelmetProvider>

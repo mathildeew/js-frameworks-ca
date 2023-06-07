@@ -16,11 +16,6 @@ export default function Cart() {
       <>
         <HelmetProvider>
           <Helmet>
-            <link
-              rel="icon"
-              type="image/svg+xml"
-              href="/src/assets/logo-sm.svg"
-            />
             <title>Sjåpp - Cart - {`(0) items`}</title>
           </Helmet>
         </HelmetProvider>
@@ -43,11 +38,6 @@ export default function Cart() {
     <>
       <HelmetProvider>
         <Helmet>
-          <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/src/assets/logo-sm.svg"
-          />
           <title>Sjåpp - Cart {`(${itemsInCart.length} items)`}</title>
         </Helmet>
       </HelmetProvider>
