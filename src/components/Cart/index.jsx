@@ -4,6 +4,7 @@ import { CartContainer, EmptyCart } from "./Cart.styled";
 import { CartItem } from "./CartItem/index";
 import { Link } from "react-router-dom";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
+import { CartItemContainer } from "./CartItem/CartItem.styled";
 
 export function Cart() {
   const cartStorage = useCart();
@@ -11,8 +12,6 @@ export function Cart() {
 
   const itemsInCart = cartStorage.item;
   if (itemsInCart.length === 0) {
-    console.log(itemsInCart.length);
-
     return (
       <>
         <HelmetProvider>
@@ -55,14 +54,14 @@ export function Cart() {
 
       <CartContainer>
         <h1>Your cart</h1>
-
-        {itemsInCart.map((product) => (
-          <>
-            <CartItem product={product}></CartItem>
-            <hr />
-          </>
-        ))}
-
+        <CartItemContainer>
+          {itemsInCart.map((product) => (
+            <>
+              <CartItem key={product.id} product={product}></CartItem>
+              <hr />
+            </>
+          ))}
+        </CartItemContainer>
         <div className="totalContainer">
           <p>Total: $ {cartStorage.total}</p>
           <BaseButton onClick={() => dispatch({ type: "CLEAR", payload: [] })}>

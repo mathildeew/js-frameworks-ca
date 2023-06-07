@@ -4,8 +4,13 @@ export const CartItemContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   margin-top: 20px;
   margin-bottom: 20px;
+
+  .cartItem {
+    display: flex;
+  }
 
   img {
     width: 100px;
@@ -20,8 +25,8 @@ export const CartItemContainer = styled.div`
   }
 
   hr {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   .itemDetails {

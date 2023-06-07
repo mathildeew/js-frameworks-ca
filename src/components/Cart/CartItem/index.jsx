@@ -2,13 +2,12 @@ import { useDispatchCart } from "../../../context/Context";
 import { RoundButton } from "../../ui/Buttons/RoundButton";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CartItemContainer } from "./CartItem.styled";
 
 export function CartItem({ product }) {
   const dispatch = useDispatchCart();
 
   return (
-    <CartItemContainer key={product.id}>
+    <div className="cartItem">
       <img src={product.imageUrl} />
 
       <div className="itemDetails">
@@ -47,6 +46,6 @@ export function CartItem({ product }) {
           </RoundButton>
         </div>
       </div>
-    </CartItemContainer>
+    </div>
   );
 }

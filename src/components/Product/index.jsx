@@ -31,12 +31,6 @@ export function Product() {
     title,
   } = products;
 
-  console.log(products);
-
-  const addToCart = (products) => {
-    dispatch({ type: "ADD", payload: products });
-  };
-
   const priceDiff = price - discountedPrice;
   const percentage = (priceDiff / price) * 100;
   const percentageOff = Number(percentage.toFixed(0));
@@ -97,7 +91,19 @@ export function Product() {
           ))}
         </div>
 
-        <BaseButton onClick={() => addToCart(products)}>Add to cart</BaseButton>
+        <BaseButton
+          onClick={() => dispatch({ type: "ADD", payload: products })}
+        >
+          Add to cart
+        </BaseButton>
+
+        {reviews?.length === 0 && (
+          <section>
+            <hr />
+            <h2>Reviews</h2>
+            <p>No reviews yet</p>
+          </section>
+        )}
 
         {reviews?.length > 0 && (
           <section>
