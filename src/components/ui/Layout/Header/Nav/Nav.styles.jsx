@@ -3,6 +3,7 @@ import { displayFlex } from "../../../../../styles/mixins";
 
 export const NavContainer = styled.nav`
   background: var(--color-secondary);
+  font-size: 1.6rem;
   width: 80px;
   height: 100%;
   position: relative;
