@@ -1,5 +1,5 @@
 import { useCart } from "../../../../context/Context";
-import { HeaderContainer, HeaderContent, HeaderLeft } from "./Header.styles";
+import { HeaderContainer } from "./Header.styles";
 import { Nav } from "./Nav";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,8 +10,8 @@ export default function Header() {
 
   return (
     <HeaderContainer>
-      <HeaderContent>
-        <HeaderLeft>
+      <div className="headerContent">
+        <div className="headerLeft">
           <Link to="/">
             <img
               src="../../../../../public/images/logo-sm.svg"
@@ -28,9 +28,9 @@ export default function Header() {
               <span className="fa-layers-counter">{cartStorage.qty}</span>;
             </span>
           </Link>
-        </HeaderLeft>
+        </div>
         <Nav />
-      </HeaderContent>
+      </div>
     </HeaderContainer>
   );
 }
