@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { displayFlex } from "./mixins";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -26,8 +27,8 @@ body {
     height: 100vh;
     min-height: 100vh;
     margin: 0;
+    overflow-x: hidden;
 }
-
 
 main {
     max-width: 850px;
@@ -35,9 +36,7 @@ main {
     padding-left: 10px;
     padding-right: 10px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    ${displayFlex({ direction: "row", align: "unset", justify: "column" })}
 }
 
 h1 {
@@ -68,5 +67,4 @@ li {
 hr {
    border-color: var(--color-primary);
 }
-
 `;

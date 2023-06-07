@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { displayFlex } from "../../../styles/mixins";
 
 export const ProductsContainer = styled.div`
   display: grid;
@@ -11,6 +12,11 @@ export const ProductsContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    ${displayFlex({
+      direction: "column",
+      align: "unset",
+      justify: "space-between",
+    })}
   }
 
   img {

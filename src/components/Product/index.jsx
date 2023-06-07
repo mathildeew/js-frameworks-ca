@@ -35,7 +35,24 @@ export function Product() {
   const percentage = (priceDiff / price) * 100;
   const percentageOff = Number(percentage.toFixed(0));
 
-  if (isLoading) return <Loader></Loader>;
+  if (isLoading)
+    return (
+      <>
+        <HelmetProvider>
+          <Helmet>
+            <link
+              rel="icon"
+              type="image/svg+xml"
+              href="/src/assets/logo-sm.svg"
+            />
+            <title>Sjåpp</title>
+          </Helmet>
+        </HelmetProvider>
+
+        <Loader />
+      </>
+    );
+
   if (isError)
     <Error>
       <img src="../../../src/assets/error.png" />

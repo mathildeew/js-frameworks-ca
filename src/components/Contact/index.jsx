@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ContactContainer } from "./FormContainer.styles";
 import { FormContainer } from "./FormContainer.styles";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -45,7 +46,7 @@ export function Contact() {
         </Helmet>
       </HelmetProvider>
 
-      <main>
+      <ContactContainer>
         <h1>Contact us</h1>
         <FormContainer onSubmit={onFormSubmit}>
           <label htmlFor="name">Your name</label>
@@ -83,7 +84,7 @@ export function Contact() {
 
           <BaseButton>Send</BaseButton>
         </FormContainer>
-      </main>
+      </ContactContainer>
     </>
   );
 }

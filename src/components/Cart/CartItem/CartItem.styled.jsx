@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { displayFlex } from "../../../styles/mixins";
 
 export const CartItemContainer = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   margin-top: 20px;
   margin-bottom: 20px;
+  ${displayFlex({ direction: "column", align: "unset", justify: "unset" })}
 
   .cartItem {
     display: flex;
@@ -31,20 +31,27 @@ export const CartItemContainer = styled.div`
 
   .itemDetails {
     width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    ${displayFlex({
+      direction: "column",
+      align: "unset",
+      justify: "space-around",
+    })}
   }
 
   .itemPrice {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 20px;
+    ${displayFlex({
+      direction: "row",
+      align: "unset",
+      justify: "space-between",
+    })}
 
     div {
-      display: flex;
-      flex-direction: column;
+      ${displayFlex({
+        direction: "column",
+        align: "unset",
+        justify: "unset",
+      })}
     }
 
     .orgPrice,
@@ -64,9 +71,11 @@ export const CartItemContainer = styled.div`
 
   .cartButtons {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    ${displayFlex({
+      direction: "row",
+      align: "center",
+      justify: "space-between",
+    })}
 
     span {
       font-size: 2rem;

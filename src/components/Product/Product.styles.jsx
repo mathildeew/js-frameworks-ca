@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { displayFlex } from "../../styles/mixins";
 
 export const ProductContainer = styled.section`
   display: flex;
@@ -41,17 +42,21 @@ export const ProductContainer = styled.section`
   .ratingContainer {
     font-size: 1.6rem;
     width: 180px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 20px;
+    ${displayFlex({
+      direction: "row",
+      align: "center",
+      justify: "space-between",
+    })}
   }
 
   .productPricing {
-    display: flex;
-    flex-direction: column;
     margin-bottom: 20px;
+    ${displayFlex({
+      direction: "row",
+      align: "unset",
+      justify: "unset",
+    })}
 
     .orgPrice,
     .newPrice {
@@ -72,9 +77,12 @@ export const ProductContainer = styled.section`
   .tagContainer {
     color: var(--color-primary);
     font-size: 1.6rem;
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
+    ${displayFlex({
+      direction: "row",
+      align: "center",
+      justify: "unset",
+    })}
 
     svg {
       margin-right: 8px;

@@ -56,10 +56,7 @@ export function Cart() {
         <h1>Your cart</h1>
         <CartItemContainer>
           {itemsInCart.map((product) => (
-            <>
-              <CartItem key={product.id} product={product}></CartItem>
-              <hr />
-            </>
+            <CartItem key={product.id} product={product}></CartItem>
           ))}
         </CartItemContainer>
         <div className="totalContainer">

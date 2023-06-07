@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { displayFlex } from "../../../../styles/mixins";
 
 export const FooterContainer = styled.footer`
   color: var(--color-white);
@@ -6,9 +7,11 @@ export const FooterContainer = styled.footer`
   background: var(--color-primary);
   width: 100%;
   height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  ${displayFlex({
+    direction: "row",
+    align: "center",
+    justify: "space-around",
+  })}
 
   li:first-child {
     margin-bottom: 15px;

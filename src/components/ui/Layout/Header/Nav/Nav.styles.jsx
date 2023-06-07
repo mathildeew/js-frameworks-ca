@@ -1,24 +1,30 @@
 import styled from "styled-components";
+import { displayFlex } from "../../../../../styles/mixins";
 
 export const NavContainer = styled.nav`
   background: var(--color-secondary);
   width: 80px;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
+  ${displayFlex({
+    direction: "row",
+    align: "center",
+    justify: "center",
+  })}
 
   .menuContainer {
     background: var(--color-secondary);
     width: 220px;
     height: 400px;
-    display: flex;
-    justify-content: flex-end;
     position: absolute;
     top: 50px;
     right: 0px;
     transition: all 0.4s ease;
+    ${displayFlex({
+      direction: "row",
+      align: "unset",
+      justify: "flex-end",
+    })}
 
     ul {
       padding: 0;

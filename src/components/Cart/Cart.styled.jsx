@@ -1,20 +1,21 @@
 import styled from "styled-components";
+import { displayFlex } from "../../styles/mixins";
 
 export const CartContainer = styled.section`
   width: 100%;
   max-width: 350px;
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
+  ${displayFlex({
+    direction: "column",
+    align: "unset",
+    justify: "unset",
+  })}
 
   a {
     color: var(--color-white);
   }
 
   .totalContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
     margin-top: 30px;
     margin-bottom: 50px;
 

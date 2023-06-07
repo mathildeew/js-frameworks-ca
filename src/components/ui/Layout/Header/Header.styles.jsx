@@ -1,13 +1,13 @@
 import styled from "styled-components";
+import { displayFlex } from "../../../../styles/mixins";
 
 export const HeaderContainer = styled.header`
   color: var(--color-primary);
   background-color: var(--color-primary);
   height: 50px;
   width: 100vw;
-  display: flex;
-  justify-content: center;
   margin-bottom: 50px;
+  ${displayFlex({ direction: "row", align: "unset", justify: "center" })}
 
   svg {
     height: 30px;
@@ -33,19 +33,23 @@ export const HeaderContainer = styled.header`
     width: 100%;
     max-width: 850px;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    ${displayFlex({
+      direction: "row",
+      align: "center",
+      justify: "space-between",
+    })}
   }
 
   .headerLeft {
     height: 100%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding-right: 30px;
     padding-left: 25px;
+    ${displayFlex({
+      direction: "row",
+      align: "center",
+      justify: "space-between",
+    })}
 
     .fa-layers {
       bottom: 4px;

@@ -23,18 +23,42 @@ export function Home() {
     setSearchedProduct(event.target.value);
   }
 
-  // const electronicFilter = products.filter((product) =>
-  //   product.tags.includes("electronics")
-  // );
+  if (isLoading) return;
+  <>
+    <HelmetProvider>
+      <Helmet>
+        <link rel="icon" type="image/svg+xml" href="/src/assets/logo-sm.svg" />
+        <title>Sjåpp</title>
+      </Helmet>
+    </HelmetProvider>
 
-  if (isLoading) return <Loader></Loader>;
+    <HomeContainer>
+      <Loader />
+    </HomeContainer>
+  </>;
+
   if (isError)
     return (
-      <Error>
-        <img src="../../../public/images/error.png" />
-        <p>There was en error with the site.</p>
-        <Link to="/">Try again</Link>
-      </Error>
+      <>
+        <HelmetProvider>
+          <Helmet>
+            <link
+              rel="icon"
+              type="image/svg+xml"
+              href="/src/assets/logo-sm.svg"
+            />
+            <title>Sjåpp - Online shop</title>
+          </Helmet>
+        </HelmetProvider>
+
+        <HomeContainer>
+          <Error>
+            <img src="../../../public/images/error.png" />
+            <p>There was en error with the site.</p>
+            <Link to="/">Try again</Link>
+          </Error>
+        </HomeContainer>
+      </>
     );
 
   return (
@@ -52,7 +76,6 @@ export function Home() {
 
       <HomeContainer>
         <h1>All products</h1>
-
         <SearchInput>
           <input
             placeholder="Search product"
