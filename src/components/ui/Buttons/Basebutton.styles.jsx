@@ -8,7 +8,7 @@ export const BaseButton = styled.button`
   background-color: var(--color-primary);
   border-radius: 4px;
   border-style: none;
-  max-width: 200px;
+  max-width: 120px;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-bottom: 20px;
@@ -28,7 +28,5 @@ export const BaseButton = styled.button`
 
   @media (min-width: 500px) {
     font-size: 1.6rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
 `;
