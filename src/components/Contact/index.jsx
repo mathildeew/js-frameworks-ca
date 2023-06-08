@@ -10,11 +10,21 @@ export default function Contact() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
+  const [btnText, setBtnText] = useState("Send");
+  const [btnProps, setBtnProps] = useState(false);
+  const [btnState, setBtnState] = useState(false);
+
   function onFormSubmit(event) {
     event.preventDefault();
-
     const body = { name, email, subject, message };
-    console.log(body);
+    setBtnText("Sending...");
+
+    setTimeout(() => {
+      console.log(body);
+      setBtnText("Sent!");
+      setBtnProps(true);
+      setBtnState(true);
+    }, 1000);
   }
 
   function onTextInputChange(event) {
@@ -77,7 +87,9 @@ export default function Contact() {
             required
           ></textarea>
 
-          <BaseButton>Send</BaseButton>
+          <BaseButton isClicked={btnProps} disabled={btnState}>
+            {btnText}
+          </BaseButton>
         </FormContainer>
       </ContactContainer>
     </>

@@ -32,17 +32,3 @@ export const BaseButton = styled.button`
     padding-bottom: 10px;
   }
 `;
-
-// const [btnText, setBtnText] = useState("Add to cart");
-// const [btnProps, setBtnProps] = useState(false);
-// const [btnState, setBtnState] = useState(false);
-
-// function handleBtChange() {
-//   setBtnText("Adding...");
-
-//   setTimeout(() => {
-//     setBtnText("Added!");
-//     setBtnProps(true);
-//     setBtnState(true);
-//   }, 1000);
-// }

@@ -53,7 +53,7 @@ export const ProductContainer = styled.section`
   .productPricing {
     margin-bottom: 20px;
     ${displayFlex({
-      direction: "row",
+      direction: "column",
       align: "unset",
       justify: "unset",
     })}
