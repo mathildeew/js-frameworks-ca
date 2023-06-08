@@ -59,7 +59,9 @@ export default function Product() {
           </Helmet>
         </HelmetProvider>
 
-        <Loader />
+        <ProductContainer>
+          <Loader />
+        </ProductContainer>
       </>
     );
 
