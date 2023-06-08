@@ -4,7 +4,7 @@
 
 Sjåpp is an online shop made for the course JavaScript Frameworks in the final semester at Noroff.
 
-[Visit demo site](https://https://sjaapp.netlify.app/)
+[Visit demo site](https://sjaapp.netlify.app/)
 
 ## Built with
 
