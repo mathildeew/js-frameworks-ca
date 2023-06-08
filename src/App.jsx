@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/ui/Layout";
 import Home from "./components/Home";
 import Product from "./components/Product/index";
+import Categories from "./components/Categories";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import Contact from "./components/Contact";
@@ -13,6 +14,7 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />}></Route>
         <Route path="product/:id" element={<Product />}></Route>
+        <Route path="categories/:category" element={<Categories />}></Route>
         <Route path="cart" element={<Cart />}></Route>
         <Route path="checkoutsuccess" element={<Checkout />}></Route>
         <Route path="contactus" element={<Contact />}></Route>

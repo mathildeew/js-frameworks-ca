@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { displayFlex } from "../../../../styles/mixins";
 
 export const FooterContainer = styled.footer`
-  color: var(--color-white);
   font-size: 1.6rem;
   background: var(--color-primary);
   width: 100%;
@@ -15,5 +14,9 @@ export const FooterContainer = styled.footer`
 
   li:first-child {
     margin-bottom: 15px;
+  }
+
+  a {
+    color: var(--color-white);
   }
 `;

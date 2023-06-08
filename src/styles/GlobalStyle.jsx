@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
 html {
     --color-primary: #37404E;
+    --color-primary08: rgba(55, 64, 78, 0.8);
     --color-secondary: #fcc0d4;
     --color-secondary04: rgba(252, 192, 212, 0.6);
     --color-black: #000;
@@ -36,7 +37,7 @@ main {
     padding-left: 10px;
     padding-right: 10px;
     margin: 0 auto;
-    ${displayFlex({ direction: "row", align: "unset", justify: "column" })}
+    ${displayFlex({ direction: "column", align: "unset", justify: "column" })}
 }
 
 h1 {
@@ -56,7 +57,7 @@ p {
 }
 
 a {
-    color: var(--color-white);
+    /* color: var(--color-white); */
     text-decoration: none;
 }
 

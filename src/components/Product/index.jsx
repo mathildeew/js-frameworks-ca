@@ -29,8 +29,6 @@ export default function Product() {
   }
 
   let { id } = useParams();
-  const url = `https://api.noroff.dev/api/v1/online-shop/${id}`;
-
   const { products, isLoading, isError } = useApi(
     `https://api.noroff.dev/api/v1/online-shop/${id}`
   );

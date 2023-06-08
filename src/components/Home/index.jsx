@@ -9,6 +9,7 @@ import NoResults from "./Search/NoResults";
 import { Error } from "../ui/Layout/Error";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const { products, isLoading, isError } = useApi(
@@ -65,6 +66,21 @@ export default function Home() {
           <title>Sjåpp - Online shop</title>
         </Helmet>
       </HelmetProvider>
+
+      <HomeContainer>
+        <h1>Popular categories</h1>
+        <div className="categories">
+          <Link to={`/categories/electronics`} className="electronics category">
+            <span>Electronics</span>
+          </Link>
+          <Link to={`/categories/beauty`} className="beauty category">
+            <span>Beauty</span>
+          </Link>
+          <Link to={`/categories/fashion`} className="fashion category">
+            <span>Fashion</span>
+          </Link>
+        </div>
+      </HomeContainer>
 
       <HomeContainer>
         <h1>All products</h1>

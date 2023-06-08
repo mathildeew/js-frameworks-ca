@@ -12,6 +12,7 @@ export const NavContainer = styled.nav`
     align: "center",
     justify: "center",
   })}
+  z-index: 10;
 
   .menuContainer {
     background: var(--color-secondary);

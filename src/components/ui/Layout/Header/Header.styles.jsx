@@ -51,6 +51,10 @@ export const HeaderContainer = styled.header`
       justify: "space-between",
     })}
 
+    svg {
+      color: var(--color-white);
+    }
+
     .fa-layers {
       bottom: 4px;
     }

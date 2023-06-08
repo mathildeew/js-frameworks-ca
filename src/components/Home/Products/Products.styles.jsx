@@ -9,9 +9,6 @@ export const ProductsContainer = styled.div`
 
   .productGrid {
     color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     ${displayFlex({
       direction: "column",
       align: "unset",
