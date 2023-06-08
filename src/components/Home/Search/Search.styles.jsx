@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { displayFlex } from "../../../styles/mixins";
 
 export const SearchInput = styled.div`
   background: var(--color-white);
@@ -6,18 +7,16 @@ export const SearchInput = styled.div`
   width: 300px;
   height: 35px;
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   margin-bottom: 30px;
+  ${displayFlex({ direction: "row", align: "center", justify: "space-around" })}
 
   input {
     font-size: 1.6rem;
     background: none;
-    border: none;
-    outline: none;
-    padding: 10px;
     width: 100%;
+    border: none;
+    padding: 10px;
+    outline: none;
   }
 
   input::placeholder {

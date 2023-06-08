@@ -67,4 +67,8 @@ li {
 hr {
    border-color: var(--color-primary);
 }
+
+textarea {
+    font-family: Open Sans Variable, sans-serif;
+}
 `;

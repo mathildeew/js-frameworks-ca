@@ -3,12 +3,21 @@ import { displayFlex } from "../../../styles/mixins";
 
 export const CartItemContainer = styled.div`
   width: 100%;
+  max-width: 450px;
   height: 100%;
   margin-top: 20px;
   ${displayFlex({ direction: "column", align: "unset", justify: "unset" })}
 
   .cartItem {
     display: flex;
+  }
+
+  .cartItemTitle {
+    ${displayFlex({
+      direction: "row",
+      align: "unset",
+      justify: "space-between",
+    })}
   }
 
   img {
@@ -73,12 +82,14 @@ export const CartItemContainer = styled.div`
     ${displayFlex({
       direction: "row",
       align: "center",
-      justify: "space-between",
+      justify: "unset",
     })}
 
     span {
       font-size: 2rem;
       font-weight: 600;
+      margin-left: 15px;
+      margin-right: 15px;
     }
   }
 `;

@@ -4,7 +4,6 @@ import { displayFlex } from "../../styles/mixins";
 export const CartContainer = styled.section`
   width: 100%;
   height: 100%;
-  max-width: 350px;
   margin: 0 auto;
   ${displayFlex({
     direction: "column",
@@ -17,6 +16,7 @@ export const CartContainer = styled.section`
   }
 
   .totalContainer {
+    max-width: 450px;
     margin-bottom: 50px;
     ${displayFlex({
       direction: "column",

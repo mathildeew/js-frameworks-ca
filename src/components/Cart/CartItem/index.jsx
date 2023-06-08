@@ -1,7 +1,7 @@
 import { useDispatchCart } from "../../../context/Context";
 import { RoundButton } from "../../ui/Buttons/RoundButton";
-import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 
 export default function CartItem({ product }) {
   const dispatch = useDispatchCart();
@@ -12,24 +12,24 @@ export default function CartItem({ product }) {
         <img src={product.imageUrl} />
 
         <div className="itemDetails">
-          <div>
+          <div className="cartItemTitle">
             <h2>{product.title}</h2>
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              onClick={() => dispatch({ type: "REMOVE", payload: product })}
+            ></FontAwesomeIcon>
+          </div>
 
-            <div className="itemPrice">
-              {product.discountedPrice === product.price && (
-                <span className="orgPrice">$ {product.price}</span>
-              )}
-              {product.discountedPrice < product.price && (
-                <div>
-                  <span className="newPrice">$ {product.discountedPrice}</span>
-                  <span className="oldPrice"> $ {product.price}</span>
-                </div>
-              )}
-              <FontAwesomeIcon
-                icon={faCircleXmark}
-                onClick={() => dispatch({ type: "REMOVE", payload: product })}
-              ></FontAwesomeIcon>
-            </div>
+          <div className="itemPrice">
+            {product.discountedPrice === product.price && (
+              <span className="orgPrice">$ {product.price}</span>
+            )}
+            {product.discountedPrice < product.price && (
+              <div>
+                <span className="newPrice">$ {product.discountedPrice}</span>
+                <span className="oldPrice"> $ {product.price}</span>
+              </div>
+            )}
           </div>
 
           <div className="cartButtons">
