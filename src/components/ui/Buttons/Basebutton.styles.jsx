@@ -17,6 +17,10 @@ export const BaseButton = styled.button`
   background-color: ${(props) => (props.isWhite ? "var(--color-white)" : "")};
   border: ${(props) => (props.isWhite ? "2px solid var(--color-primary)" : "")};
 
+  color: ${(props) => (props.isClicked ? "var(--color-primary)" : "")};
+  background-color: ${(props) =>
+    props.isClicked ? "var(--color-secondary04)" : ""};
+
   a {
     color: var(--color-white);
     color: ${(props) => (props.isWhite ? "var(--color-primary)" : "")};
@@ -28,3 +32,17 @@ export const BaseButton = styled.button`
     padding-bottom: 10px;
   }
 `;
+
+// const [btnText, setBtnText] = useState("Add to cart");
+// const [btnProps, setBtnProps] = useState(false);
+// const [btnState, setBtnState] = useState(false);
+
+// function handleBtChange() {
+//   setBtnText("Adding...");
+
+//   setTimeout(() => {
+//     setBtnText("Added!");
+//     setBtnProps(true);
+//     setBtnState(true);
+//   }, 1000);
+// }

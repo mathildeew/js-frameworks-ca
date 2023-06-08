@@ -8,10 +8,25 @@ import { ProductContainer } from "./Product.styles";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { Ratings } from "../ui/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHashtag } from "@fortawesome/free-solid-svg-icons";
+import { faHashtag, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export default function Product() {
   const dispatch = useDispatchCart();
+  const [btnText, setBtnText] = useState("Add to cart");
+  const [btnProps, setBtnProps] = useState(false);
+  const [btnState, setBtnState] = useState(false);
+
+  function handleAddToCart() {
+    setBtnText("Adding...");
+
+    setTimeout(() => {
+      dispatch({ type: "ADD", payload: products });
+      setBtnText("Added!");
+      setBtnProps(true);
+      setBtnState(true);
+    }, 1000);
+  }
 
   let { id } = useParams();
   const url = `https://api.noroff.dev/api/v1/online-shop/${id}`;
@@ -109,9 +124,11 @@ export default function Product() {
         </div>
 
         <BaseButton
-          onClick={() => dispatch({ type: "ADD", payload: products })}
+          onClick={handleAddToCart}
+          isClicked={btnProps}
+          disabled={btnState}
         >
-          Add to cart
+          {btnText}
         </BaseButton>
 
         {reviews?.length === 0 && (
