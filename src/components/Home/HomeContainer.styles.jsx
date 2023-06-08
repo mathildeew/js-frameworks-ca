@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { displayFlex } from "../../styles/mixins";
 
 export const HomeContainer = styled.section`
   width: 100%;
@@ -12,15 +11,15 @@ export const HomeContainer = styled.section`
   }
 
   .electronics {
-    background-image: url("images/products/10-hairdryer.jpg");
+    background-image: url("/images/products/10-hairdryer.jpg");
   }
 
   .beauty {
-    background-image: url("images/products/24-serum-vitamin-c.jpg");
+    background-image: url("/images/products/24-serum-vitamin-c.jpg");
   }
 
   .fashion {
-    background-image: url("images/products/7-shoes-white.jpg");
+    background-image: url("/images/products/7-shoes-white.jpg");
   }
 
   .category {
