@@ -8,6 +8,7 @@ import Loader from "../ui/Loader";
 import { Error } from "../ui/Layout/Error";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import NoResults from "./Search/NoResults";
 
 export default function Home() {
   const { products, isLoading, isError } = useApi(
@@ -79,6 +80,7 @@ export default function Home() {
 
         {!searchedProduct && <Products data={products} />}
         {searchedProduct && <Products data={filteredProducts} />}
+        {filteredProducts.length === 0 && <NoResults />}
       </HomeContainer>
     </>
   );
