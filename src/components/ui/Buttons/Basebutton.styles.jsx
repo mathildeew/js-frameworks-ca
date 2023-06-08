@@ -8,7 +8,7 @@ export const BaseButton = styled.button`
   background-color: var(--color-primary);
   border-radius: 4px;
   border-style: none;
-  max-width: 120px;
+  max-width: 125px;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-bottom: 20px;
@@ -20,6 +20,9 @@ export const BaseButton = styled.button`
   color: ${(props) => (props.isClicked ? "var(--color-primary)" : "")};
   background-color: ${(props) =>
     props.isClicked ? "var(--color-secondary04)" : ""};
+
+  padding: ${(props) => (props.biggerBtn ? "20px" : "")};
+  max-width: ${(props) => (props.biggerBtn ? "150px" : "")};
 
   a {
     color: var(--color-white);

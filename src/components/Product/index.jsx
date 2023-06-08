@@ -106,12 +106,12 @@ export default function Product() {
 
         <div className="productPricing">
           {discountedPrice === price && (
-            <span className="orgPrice">${price}</span>
+            <span className="orgPrice">$ {price}</span>
           )}
           {discountedPrice < price && (
             <>
-              <span className="newPrice">${discountedPrice}</span>
-              <span className="oldPrice">${price}</span>
+              <span className="newPrice">$ {discountedPrice}</span>
+              <span className="oldPrice">$ {price}</span>
             </>
           )}
         </div>
@@ -126,6 +126,7 @@ export default function Product() {
         </div>
 
         <BaseButton
+          biggerBtn={true}
           onClick={handleAddToCart}
           isClicked={btnProps}
           disabled={btnState}

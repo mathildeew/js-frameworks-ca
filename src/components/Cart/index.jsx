@@ -12,11 +12,11 @@ export default function Cart() {
   const dispatch = useDispatchCart();
 
   const navigate = useNavigate();
-  const [btnText, setBtnText] = useState("Proceed to checkout");
+  const [btnText, setBtnText] = useState("Checkout");
   const [btnProps, setBtnProps] = useState(false);
 
   function checkout() {
-    setBtnText("Sending to checkout");
+    setBtnText("Processing...");
     setBtnProps(true);
 
     setTimeout(() => {
@@ -66,7 +66,7 @@ export default function Cart() {
         </CartItemContainer>
         <div className="totalContainer">
           <p>Total: $ {cartStorage.total}</p>
-          <BaseButton onClick={checkout} isClicked={btnProps}>
+          <BaseButton biggerBtn={true} onClick={checkout} isClicked={btnProps}>
             {btnText}
           </BaseButton>
         </div>

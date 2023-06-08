@@ -51,7 +51,7 @@ export const ProductContainer = styled.section`
   }
 
   .productPricing {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     ${displayFlex({
       direction: "column",
       align: "unset",
