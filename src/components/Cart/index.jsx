@@ -2,13 +2,28 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useCart, useDispatchCart } from "../../context/Context";
 import { CartContainer, EmptyCart } from "./Cart.styled";
 import CartItem from "./CartItem/index";
-import { Link } from "react-router-dom";
+import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { CartItemContainer } from "./CartItem/CartItem.styled";
+import { useState } from "react";
 
 export default function Cart() {
   const cartStorage = useCart();
   const dispatch = useDispatchCart();
+
+  const navigate = useNavigate();
+  const [btnText, setBtnText] = useState("Proceed to checkout");
+  const [btnProps, setBtnProps] = useState(false);
+
+  function checkout() {
+    setBtnText("Sending to checkout");
+    setBtnProps(true);
+
+    setTimeout(() => {
+      dispatch({ type: "CLEAR", payload: [] });
+      navigate("/checkoutsuccess");
+    }, 1000);
+  }
 
   const itemsInCart = cartStorage.item;
   if (itemsInCart.length === 0) {
@@ -51,8 +66,8 @@ export default function Cart() {
         </CartItemContainer>
         <div className="totalContainer">
           <p>Total: $ {cartStorage.total}</p>
-          <BaseButton onClick={() => dispatch({ type: "CLEAR", payload: [] })}>
-            <Link to="/checkoutsuccess">Proceed to checkout</Link>
+          <BaseButton onClick={checkout} isClicked={btnProps}>
+            {btnText}
           </BaseButton>
         </div>
       </CartContainer>
