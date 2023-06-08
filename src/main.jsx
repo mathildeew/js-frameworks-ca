@@ -1,6 +1,7 @@
 import App from "./App.jsx";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import ScrollToTop from "./components/ui/helpers/ScrollToTop.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { Theme } from "./styles/theme";
 import { GlobalStyle } from "./styles/GlobalStyle.jsx";
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <CartProvider>
         <Theme>
           <GlobalStyle />
+          <ScrollToTop />
           <App />
         </Theme>
       </CartProvider>

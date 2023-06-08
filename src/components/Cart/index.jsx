@@ -2,7 +2,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useCart, useDispatchCart } from "../../context/Context";
 import { CartContainer, EmptyCart } from "./Cart.styled";
 import CartItem from "./CartItem/index";
-import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BaseButton } from "../ui/Buttons/Basebutton.styles";
 import { CartItemContainer } from "./CartItem/CartItem.styled";
 import { useState } from "react";
