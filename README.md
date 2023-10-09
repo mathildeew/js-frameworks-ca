@@ -15,6 +15,7 @@ The goal for this brief was to apply knowledge of React to build an eCom store, 
 - A contact page with form ensuring data validation.
 - Using React Router to switch between pages.
 
+
 ## Built with
 - React+Vite
 - React Styled Components
@@ -25,13 +26,14 @@ The goal for this brief was to apply knowledge of React to build an eCom store, 
 ### Packages and libraries
 - Font Awesome React Component
 
-## Installation
 
+## Installation
 - Clone the repo
 - Install the dependencies
   `npm i`
 - Run the project
   `npm run dev`
+  
 
 ## Design and identity
 ![identity-sjaapp](https://github.com/mathildeew/js-frameworks-ca/assets/94295012/7aec3cb9-f63c-456d-9eb4-855e70658aae)
