@@ -32,3 +32,9 @@ The goal for this brief was to apply knowledge of React to build an eCom store, 
   `npm i`
 - Run the project
   `npm run dev`
+
+## Design and identity
+![identity-sjaapp](https://github.com/mathildeew/js-frameworks-ca/assets/94295012/7aec3cb9-f63c-456d-9eb4-855e70658aae)
+
+The design is minimal, as the primary focus for this assignment was to get a grasp of React to build the front-end application. I even made the name quite simple - literally translating shop. The site has however some key features, such as different logo for big and small screens and a fun little loader. And of course a color palette.
+
