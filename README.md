@@ -25,10 +25,10 @@ The goal for this brief was to apply knowledge of React to build an eCom store, 
 ### Packages and libraries
 - Font Awesome React Component
 
-## Instructions
-
-### Installation
+## Installation
 
 - Clone the repo
-- Install the dependencies (`npm i`)
-- Run the project (`npm run dev`)
+- Install the dependencies
+  `npm i`
+- Run the project
+  `npm run dev`
