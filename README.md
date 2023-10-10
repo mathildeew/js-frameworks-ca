@@ -7,7 +7,7 @@ Made in the final semester. The goal was to apply the knowledge of React aquired
 [Visit demo site](https://sjaapp.netlify.app/)
 
 ## Brief
-The goal for this brief was to apply knowledge of React to build an eCom store, with a homepage, individual product page, cart page and a checkout success page. To ensure a seamless shopping experience it includes the following features:
+The goal for this assignment was to apply knowledge of React to build an eCom store, with a homepage, individual product page, cart page and a checkout success page. To ensure a seamless shopping experience it includes the following features:
 - A homepage with a list of all the products with a search bar that filters products when typing in a product name.
 - An individual product page that display the title, description, the image and reviews, if there are any, in addition adding items to the cart.
 - A header with a cart icon component that acts as a button as well as displaying the current number of items in the cart.
